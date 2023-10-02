@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import {VendorsService} from 'src/app/shared/services/vendors.service';
+
 
 @Component({
   selector: 'app-vendors',
@@ -7,9 +10,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VendorsComponent implements OnInit {
 
-  constructor() { }
+  constructor(public vendorService: VendorsService,private router:Router) { }
+
+  
 
   ngOnInit(): void {
+    console.log(this.vendorService.getAllVendors());
+    this.vendorService.getAllVendors();
   }
 
 }
