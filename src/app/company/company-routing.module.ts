@@ -4,8 +4,8 @@ import {VendorListComponent} from './vendor-list/vendor-list.component'
 import { HomecompanyComponent } from './homecompany/homecompany.component';
 
 const routes: Routes = [
-  {path:'vendorlist',component:VendorListComponent},
-  {path:'homecompany',component:HomecompanyComponent}
+  {path:'vendorlist',component:VendorListComponent}
+ 
 ];
 
 @NgModule({
