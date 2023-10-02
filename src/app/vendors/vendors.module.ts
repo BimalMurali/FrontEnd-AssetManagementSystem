@@ -9,11 +9,12 @@ import { AddassetsComponent } from './addassets/addassets.component';
 import { ListassetsComponent } from './listassets/listassets.component';
 import { EditassetsComponent } from './editassets/editassets.component';
 import { UpdatestatusComponent } from './updatestatus/updatestatus.component';
+import { HomevendorsComponent } from './homevendors/homevendors.component';
 
 
 
 @NgModule({
-  declarations: [VendorsComponent, AddassetsComponent, ListassetsComponent, EditassetsComponent, UpdatestatusComponent],
+  declarations: [VendorsComponent, AddassetsComponent, ListassetsComponent, EditassetsComponent, UpdatestatusComponent, HomevendorsComponent],
   imports: [
     CommonModule,
     VendorsRoutingModule,
