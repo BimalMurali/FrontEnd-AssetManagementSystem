@@ -7,7 +7,7 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class VendorsService {
-    //list of Employees
+    //list of Vendors
     vendors : Vendors[];
 
   constructor(private httpClient: HttpClient) { }
