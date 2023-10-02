@@ -7,20 +7,21 @@ import { AuthComponent } from './auth/auth.component'
 import {CompanyComponent} from './company/company.component'
 import {NotfoundComponent} from './shared/notfound/notfound.component'
 
-
 const routes: Routes = [
   { path: '', component: HomeComponent },
 
-  {path:'company',
-  component: CompanyComponent,
-loadChildren: ()=>import('./company/company.module').then(x=>x.CompanyModule)},
+  {
+    path: 'company',
+    component: CompanyComponent,
+    loadChildren: () => import('./company/company.module').then(x => x.CompanyModule)
+  },
   {
     path: 'auth',
     component: AuthComponent,
     loadChildren: () => import('./auth/auth.module').then(x => x.AuthModule)
   },
   {
-    path:'vendors',
+    path: 'vendors',
     component: VendorsComponent,
     loadChildren: () => import('./vendors/vendors.module').then(x => x.VendorsModule)
 

@@ -58,7 +58,7 @@ export class LoginComponent implements OnInit {
         this.error="Invalid response"
       }
       else if(response.data.role===1){
-        this.router.navigate(["/shared/home"]);
+        this.router.navigate(["/company/homecompany"]);
       
       //Session storage
       sessionStorage.setItem("USER_NAME",response.data.Username);
@@ -66,6 +66,15 @@ export class LoginComponent implements OnInit {
       //Local storage
       localStorage.setItem("TOKEN",response.data.ACCESSTOKEN);
     
+    }
+    else if(response.data.role===2){
+      this.router.navigate(["/vendors/homevendors"]);
+      
+      //Session storage
+      sessionStorage.setItem("USER_NAME",response.data.Username);
+      
+      //Local storage
+      localStorage.setItem("TOKEN",response.data.ACCESSTOKEN);
     }
   })
     }
