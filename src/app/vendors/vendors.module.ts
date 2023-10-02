@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { VendorsRoutingModule } from './vendors-routing.module';
 import { VendorsComponent } from './vendors.component';
 import{FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -12,6 +13,7 @@ import{FormsModule, ReactiveFormsModule} from '@angular/forms';
   imports: [
     CommonModule,
     VendorsRoutingModule,
+    RouterModule,
     FormsModule
   ]
 })

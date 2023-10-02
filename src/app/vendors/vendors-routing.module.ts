@@ -3,7 +3,6 @@ import { Routes, RouterModule } from '@angular/router';
 import {VendorsComponent} from './vendors.component'
 
 const routes: Routes = [
-  {path : 'list',component:VendorsComponent}
 ];
 
 @NgModule({
