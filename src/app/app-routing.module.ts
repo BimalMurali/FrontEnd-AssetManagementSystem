@@ -5,6 +5,7 @@ import { VendorsComponent } from './vendors/vendors.component'
 import { HomeComponent } from './shared/home/home.component';
 import { AuthComponent } from './auth/auth.component'
 import {CompanyComponent} from './company/company.component'
+import {NotfoundComponent} from './shared/notfound/notfound.component'
 
 
 const routes: Routes = [
@@ -23,6 +24,11 @@ loadChildren: ()=>import('./company/company.module').then(x=>x.CompanyModule)},
     component: VendorsComponent,
     loadChildren: () => import('./vendors/vendors.module').then(x => x.VendorsModule)
 
+  },
+
+  //Wild card routes for page not found
+  {
+    path: '**',component: NotfoundComponent,
   }
 
 ];
