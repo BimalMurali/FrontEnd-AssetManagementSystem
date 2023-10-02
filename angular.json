@@ -28,9 +28,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss",
-              "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "node_modules/font-awesome/css/font-awesome.min.css"
+              "src/styles.scss"          
             ],
             "scripts": []
           },
@@ -125,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "ENIGMA-FrontEnd"
+    }
+  },
+  "defaultProject": "ENIGMA-FrontEnd",
+  "cli": {
+    "analytics": "7342662a-834d-4b6e-a7ad-4f7eb921e92c"
+  }
 }
