@@ -6,11 +6,12 @@ import { CompanyComponent } from './company.component';
 import { VendorListComponent } from './vendor-list/vendor-list.component';
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ViewStatusComponent } from './view-status/view-status.component';
 
 
 
 @NgModule({
-  declarations: [CompanyComponent, VendorListComponent],
+  declarations: [CompanyComponent, VendorListComponent, ViewStatusComponent],
   imports: [
     CommonModule,
     RouterModule,
