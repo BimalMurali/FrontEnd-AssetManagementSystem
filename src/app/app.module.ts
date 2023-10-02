@@ -7,6 +7,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { HomeComponent } from './shared/home/home.component';
+import { HomevendorComponent } from './vendor/homevendor/homevendor.component';
 
 
 @NgModule({
@@ -14,6 +15,7 @@ import { HomeComponent } from './shared/home/home.component';
     AppComponent,
     HomeComponent,
     SharedComponent,
+    HomevendorComponent,
 
   ],
   imports: [
