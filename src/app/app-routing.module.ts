@@ -9,12 +9,20 @@ import {CompanyComponent} from './company/company.component'
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  {path:'company',component:CompanyComponent,
+
+  {path:'company',
+  component: CompanyComponent,
 loadChildren: ()=>import('./company/company.module').then(x=>x.CompanyModule)},
   {
     path: 'auth',
     component: AuthComponent,
     loadChildren: () => import('./auth/auth.module').then(x => x.AuthModule)
+  },
+  {
+    path:'vendors',
+    component: VendorsComponent,
+    loadChildren: () => import('./vendors/vendors.module').then(x => x.VendorsModule)
+
   }
 
 ];
