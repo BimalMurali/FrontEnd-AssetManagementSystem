@@ -5,45 +5,267 @@
     <form name="frmAssetCreation" #form="ngForm" autocomplete="off" (ngSubmit)="onSubmit(form)">
 
 
-        <!-- Id -->
+        
+        <!-- assetCraetionId -->
         <div class="form-group">
-            <input type="text"  name="id" [(ngModel)]="assetcreationservice.formAssetCreationData.id">
+            <label for="">Asset Creation id</label>
+            <input type="text" name="id" #id="ngModel"
+                [(ngModel)]="assetcreationservice.formAssetCreationData.id" class="form-control"
+                placeholder="Enter Creation id" min="3" maxlength="25" required
+                [ngClass]="{'is-invalid':id.touched && id.invalid}">
+
+            <!-- Validation error message -->
+            <div class="validation-error" *ngIf="id.touched && id.invalid">
+                <div *ngIf="id.errors.required">
+                    assetCreationId is invalid or required
+
+                </div>
+
+            </div>
+
         </div>
 
         <!-- make -->
 
         <div class="form-group">
             <label for="">Make</label>
-            <input type="text" name="make" #make="ngModel"
-                [(ngModel)]="assetcreationservice.formAssetCreationData.make" class="form-control"
-                placeholder="Enter make name" min="3" maxlength="25" required
+            <input type="text" name="make" #make="ngModel" [(ngModel)]="assetcreationservice.formAssetCreationData.make"
+                class="form-control" placeholder="Enter make name" min="3" maxlength="25" required
                 [ngClass]="{'is-invalid':make.touched && make.invalid}">
 
-         <!-- Validation error message -->
-         <div class="validation-error" *ngIf="make.touched && make.invalid">
-            <div *ngIf="make.errors.required">
-                Make Name is invalid or required
+            <!-- Validation error message -->
+            <div class="validation-error" *ngIf="make.touched && make.invalid">
+                <div *ngIf="make.errors.required">
+                    Make Name is invalid or required
+
+                </div>
+
+            </div>
+        </div>
+
+
+         <!-- dropdown list for asset def -->
+         <div class="form-group">
+            <label for="">Asset Definition</label>
+            <select name="modelId" id="modelId" #modelId="ngModel" [(ngModel)]="assetcreationservice.formAssetCreationData.modelId" class="form-control" required>
+                <option value=0 selected disabled>---Select Asset Definition</option>
+                <option *ngFor="let dept of assetcreationservice.assetdefinition" value="{{dept.id}}">
+                    {{dept.assetName}}
+                </option>
+            </select>
+        </div>
+
+        
+        <!-- Asset Definition Id -->
+
+        <div class="form-group">
+            <label for="">Asset Definiton Id</label>
+            <input type="text" name="modelId" #modelId="ngModel"
+                [(ngModel)]="assetcreationservice.formAssetCreationData.modelId" class="form-control"
+                placeholder="Enter modelId" min="3" maxlength="25" required
+                [ngClass]="{'is-invalid':modelId.touched && modelId.invalid}">
+
+            <!-- Validation error message -->
+            <div class="validation-error" *ngIf="modelId.touched && modelId.invalid">
+                <div *ngIf="modelId.errors.required">
+                    modelId is invalid or required
+
+                </div>
+
+            </div>
+
+        </div>
+        <!-- assetTypeId -->
+        <!-- <div class="form-group">
+            <label for="">assetTypeId</label>
+            <input type="text" name="assetTypeId" #assetTypeId="ngModel"
+                [(ngModel)]="assetcreationservice.formAssetCreationData.assetTypeId" class="form-control"
+                placeholder="Enter assetTypeId" min="3" maxlength="25" required
+                [ngClass]="{'is-invalid':assetTypeId.touched && assetTypeId.invalid}">
+
+            Validation error message
+            <div class="validation-error" *ngIf="assetTypeId.touched && assetTypeId.invalid">
+                <div *ngIf="assetTypeId.errors.required">
+                    assetTypeId is invalid or required
+
+                </div>
+
+            </div>
+
+        </div>
+ -->
+
+        <!-- serialNo -->
+        <div class="form-group">
+            <label for="">serial No</label>
+            <input type="text" name="serialNo" #serialNo="ngModel"
+                [(ngModel)]="assetcreationservice.formAssetCreationData.serialNo" class="form-control"
+                placeholder="Enter serialNo" min="3" maxlength="25" required
+                [ngClass]="{'is-invalid':serialNo.touched && serialNo.invalid}">
+
+            <!-- Validation error message -->
+            <div class="validation-error" *ngIf="serialNo.touched && serialNo.invalid">
+                <div *ngIf="serialNo.errors.required">
+                    serialNo is invalid or required
+
+                </div>
 
             </div>
 
         </div>
 
-        <!-- Designation -->
+        <!-- yearOfManufacture -->
 
         <div class="form-group">
-            <label for="">Designation</label>
-            <input type="text" name="designation" #designation="ngModel"
-                [(ngModel)]="employeeService.formEmployeeData.designation" class="form-control"
-                placeholder="Enter designtion name" min="3" maxlength="25" required
-                [ngClass]="{'is-invalid':designation.touched && designation.invalid}">
+            <label for="">Year of Manufacture</label>
+            <input type="text" name="yearOfManufacture" #yearOfManufacture="ngModel"
+                [(ngModel)]="assetcreationservice.formAssetCreationData.serialNo" class="form-control"
+                placeholder="Enter yearOfManufacture" min="3" maxlength="25" required
+                [ngClass]="{'is-invalid':yearOfManufacture.touched && yearOfManufacture.invalid}">
 
+            <!-- Validation error message -->
+            <div class="validation-error" *ngIf="yearOfManufacture.touched && serialNo.invalid">
+                <div *ngIf="yearOfManufacture.errors.required">
+                    serialNo is invalid or required
 
+                </div>
 
+            </div>
 
+        </div>
+        
+
+        <!-- purchaseDate -->
+        <div class="form-group">
+            <label>Purchase Date</label>
+            <input type="date" name="purchaseDate" #purchaseDate="ngModel"
+                [(ngModel)]="assetcreationservice.formAssetCreationData.purchaseDate" class="form-control"
+                placeholder="Enter date " min="3" maxlength="25" required
+                [ngClass]="{'is-invalid':purchaseDate.touched && purchaseDate.invalid}">
+
+            <!-- Validation error message -->
+            <div class="validation-error" *ngIf="purchaseDate.touched && purchaseDate.invalid">
+                <div *ngIf="purchaseDate.errors.required">
+                    Date is required
+
+                </div>
+
+            </div>
 
         </div>
 
-        </form>
+        <!-- warrranty -->
+        
+        <div class="form-group">
+            <label for="">Warranty</label>
+            <input type="text" name="warrranty" #warrranty="ngModel"
+                [(ngModel)]="assetcreationservice.formAssetCreationData.warrranty" class="form-control"
+                placeholder="Enter warrranty" min="3" maxlength="25" required
+                [ngClass]="{'is-invalid':warrranty.touched && warrranty.invalid}">
+
+            <!-- Validation error message -->
+            <div class="validation-error" *ngIf="warrranty.touched && warrranty.invalid">
+                <div *ngIf="warrranty.errors.required">
+                    serialNo is invalid or required
+
+                </div>
+
+            </div>
 
         </div>
 
+
+        <!-- fromDate -->
+        <div class="form-group">
+            <label>From Date</label>
+            <input type="date" name="fromDate" #fromDate="ngModel"
+                [(ngModel)]="assetcreationservice.formAssetCreationData.fromDate" class="form-control"
+                placeholder="Enter fromDate " min="3" maxlength="25" required
+                [ngClass]="{'is-invalid':fromDate.touched && fromDate.invalid}">
+
+            <!-- Validation error message -->
+            <div class="validation-error" *ngIf="fromDate.touched && fromDate.invalid">
+                <div *ngIf="fromDate.errors.required">
+                    fromDate is required
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- toDate -->
+
+        <div class="form-group">
+            <label>To Date</label>
+            <input type="date" name="toDate" #toDate="ngModel"
+                [(ngModel)]="assetcreationservice.formAssetCreationData.toDate" class="form-control"
+                placeholder="Enter toDate " min="3" maxlength="25" required
+                [ngClass]="{'is-invalid':toDate.touched && toDate.invalid}">
+
+            <!-- Validation error message -->
+            <div class="validation-error" *ngIf="toDate.touched && toDate.invalid">
+                <div *ngIf="toDate.errors.required">
+                    toDate is required
+
+                </div>
+
+            </div>
+
+        </div>
+        
+
+
+        
+
+        <!-- dropdown list for vendors -->
+        <div class="form-group">
+            <label for="">Vendors</label>
+            <select name="vendorAssetTypeID" id="vendorAssetTypeID" #vendorAssetTypeID="ngModel" [(ngModel)]="assetcreationservice.formAssetCreationData.vendorAssetTypeID" class="form-control" required>
+                <option value=0 selected disabled>---Select vendors</option>
+                <option *ngFor="let vendor of assetcreationservice.vendors" value="{{vendor.id}}">
+                    {{vendor.vendorName}}
+                </option>
+            </select>
+        </div>
+
+        <!-- vendorAssetTypeID -->
+
+        <div class="form-group">
+            <label for="">vendorAssetTypeID</label>
+            <input type="text" name="vendorAssetTypeID" #vendorAssetTypeID="ngModel"
+                [(ngModel)]="assetcreationservice.formAssetCreationData.vendorAssetTypeID" class="form-control"
+                placeholder="Enter vendorAssetTypeID" min="3" maxlength="25" required
+                [ngClass]="{'is-invalid':vendorAssetTypeID.touched && vendorAssetTypeID.invalid}">
+
+            <!-- Validation error message -->
+            <div class="validation-error" *ngIf="vendorAssetTypeID.touched && vendorAssetTypeID.invalid">
+                <div *ngIf="vendorAssetTypeID.errors.required">
+                    vendorAssetTypeID is invalid or required
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Submit button -->
+        <div class="form-group">
+            <button type="submit" class="btn-lg btn-primary form-control"
+                [disabled]="!(form.valid && form.dirty)">INSERT
+            </button>
+
+        </div>
+
+
+
+
+
+
+
+
+
+    </form>
+
+</div>

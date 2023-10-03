@@ -3,6 +3,8 @@ import { Assetcreation } from '../models/assetcreation';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
+import { Vendors } from '../models/vendors';
+import { Assetdefinition } from '../models/assetdefinition';
 
 
 @Injectable({
@@ -14,6 +16,12 @@ export class AssetcreationService {
 
   // form
   formAssetCreationData:Assetcreation=new Assetcreation();
+
+  // list of vendors
+  vendors:Vendors[];
+
+  // list of asset definitions
+  assetdefinition:Assetdefinition[];
 
 
 
@@ -42,6 +50,35 @@ getAllAssetDefinitionList(): Observable<any>{
 insertAssetCreation(assetcreation:Assetcreation):Observable<any>{
   return this.httpClient.post(environment.apiUrl + '/api/assetcreation',assetcreation)
 }
+
+// get all vendors
+// http://localhost:9091/api/vendors
+getAllVendors(): void {
+  this.httpClient.get(environment.apiUrl + '/api/vendors')
+  .toPromise()
+  .then(response =>{
+    console.log(response);
+    this.vendors=response as Vendors[];
+  },
+  error=>{
+    console.log(error);
+  });
+}
+
+// get all asset definitions
+// http://localhost:9091/api/assettype
+getAllAssetsDef(): void {
+  this.httpClient.get(environment.apiUrl + '/api/assettype')
+  .toPromise()
+  .then(response =>{
+    console.log(response);
+    this.assetdefinition=response as Assetdefinition[];
+  },
+  error=>{
+    console.log(error);
+  });
+}
+
 
 
 }

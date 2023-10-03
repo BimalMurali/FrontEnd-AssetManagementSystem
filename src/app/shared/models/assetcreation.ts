@@ -2,9 +2,9 @@ import { Assetdefinition } from "./assetdefinition";
 import { Vendors } from "./vendors";
 
 export class Assetcreation {
-    id : number=0;
+    id : number;
     make:string='';
-    modelId:number=0;
+    modelId:number;
     serialNo:string='';
     assetTypeId:number;
     yearOfManufacture:string='';
@@ -12,7 +12,7 @@ export class Assetcreation {
     warrranty:string='';
     fromDate:Date;
     toDate:Date;
-    vendorAssetTypeID:number=0;
+    vendorAssetTypeID:number;
 
     vendors: Vendors = new Vendors();
     assetdef: Assetdefinition = new Assetdefinition();
