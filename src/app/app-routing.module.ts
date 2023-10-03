@@ -4,19 +4,20 @@ import { Routes, RouterModule } from '@angular/router';
 import { VendorsComponent } from './vendors/vendors.component'
 import { HomeComponent } from './shared/home/home.component';
 import { AuthComponent } from './auth/auth.component'
-import {CompanyComponent} from './company/company.component'
+import {AssetcreationComponent} from './assetcreation/assetcreation.component'
 import {NotfoundComponent} from './shared/notfound/notfound.component'
+import { LoginComponent } from './auth/login/login.component';
 
 const routes: Routes = [
   {path: '',redirectTo:'home',pathMatch:'full'},
 
   { 
-    path: 'home', component: HomeComponent },
+    path: 'home', component: LoginComponent },
 
   {
-    path: 'company',
-    component: CompanyComponent,
-    loadChildren: () => import('./company/company.module').then(x => x.CompanyModule)
+    path: 'assetcreation',
+    component: AssetcreationComponent,
+    loadChildren: () => import('./assetcreation/assetcreation.module').then(x => x.AssetcreationModule)
   },
   {
     path: 'auth',
