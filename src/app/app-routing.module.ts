@@ -7,12 +7,19 @@ import { AuthComponent } from './auth/auth.component'
 import {AssetcreationComponent} from './assetcreation/assetcreation.component'
 import {NotfoundComponent} from './shared/notfound/notfound.component'
 import { LoginComponent } from './auth/login/login.component';
+import {PurchaseordersComponent} from './purchaseorders/purchaseorders.component'
 
 const routes: Routes = [
   {path: '',redirectTo:'home',pathMatch:'full'},
 
   { 
     path: 'home', component: LoginComponent },
+  
+    {
+      path:'purchaseorders',
+      component:PurchaseordersComponent,
+      loadChildren:()=>import('./purchaseorders/purchaseorders.module').then(x=>x.PurchaseordersModule)
+    },
 
   {
     path: 'assetcreation',

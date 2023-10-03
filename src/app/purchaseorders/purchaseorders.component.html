@@ -1,1 +1,26 @@
-<p>purchaseorders works!</p>
+
+<div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light bg-secondary">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link custom" [routerLink]="['/purchaseorders/list']">List</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link custom" [routerLink]="['/purchaseorders/edit']">Edit</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link custom" [routerLink]="['/purchaseorders/delete']">Delete</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link custom" [routerLink]="['/purchaseorders/add']">Add</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/home']">Logout</a>
+        </li>
+      </ul>
+    </nav>
+    <h1>Welcome User</h1>
+  <router-outlet></router-outlet>
+  </div>
