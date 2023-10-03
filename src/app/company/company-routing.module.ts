@@ -9,8 +9,8 @@ const routes: Routes = [
 
   {path:'vendorlist',component:VendorListComponent},
   {path:'viewstatus',component:ViewStatusComponent},
- {path:'homecompany',component:HomecompanyComponent}
-
+ {path:'homecompany',component:HomecompanyComponent},
+ {path:'home',component:HomecompanyComponent}
 ];
 
 @NgModule({
