@@ -8,6 +8,9 @@ export class Purchaseorder {
     purchaseOrderNo: number=0;
     orderDate: Date
     deliveryDate: Date;
+    assetTypeId:number;
+    statusnames:string;
+    vendorid:number;
     
     assetdef: Assetdefinition = new Assetdefinition();
     vendors: Vendors = new Vendors();
