@@ -6,9 +6,10 @@ import { HomecompanyComponent } from './homecompany/homecompany.component';
 
 
 const routes: Routes = [
+
   {path:'vendorlist',component:VendorListComponent},
   {path:'viewstatus',component:ViewStatusComponent},
-  {path:'vendorlist',component:VendorListComponent},
+ {path:'homecompany',component:HomecompanyComponent},
  {path:'home',component:HomecompanyComponent}
 ];
 
