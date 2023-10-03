@@ -7,6 +7,7 @@ import { AuthComponent } from './auth/auth.component'
 import {AssetcreationComponent} from './assetcreation/assetcreation.component'
 import {NotfoundComponent} from './shared/notfound/notfound.component'
 import { LoginComponent } from './auth/login/login.component';
+import {AssetdefinitionComponent} from './assetdefinition/assetdefinition.component'
 
 const routes: Routes = [
   {path: '',redirectTo:'home',pathMatch:'full'},
@@ -18,6 +19,11 @@ const routes: Routes = [
     path: 'assetcreation',
     component: AssetcreationComponent,
     loadChildren: () => import('./assetcreation/assetcreation.module').then(x => x.AssetcreationModule)
+  },
+  {
+    path: 'assetdefinition',
+    component: AssetdefinitionComponent,
+    loadChildren: () => import('./assetdefinition/assetdefinition.module').then(x => x.AssetdefinitionModule)
   },
   {
     path: 'auth',

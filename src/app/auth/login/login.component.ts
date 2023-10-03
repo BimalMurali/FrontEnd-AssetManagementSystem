@@ -57,8 +57,8 @@ export class LoginComponent implements OnInit {
       if(response==null){
         this.error="Invalid response"
       }
-      else if(response.data.role===1){
-        this.router.navigate(["/company/home"]);
+      else if(response.data.role===3){
+        this.router.navigate(["/assetdefinition"]);
       
       //Session storage
       sessionStorage.setItem("USER_NAME",response.data.Username);
