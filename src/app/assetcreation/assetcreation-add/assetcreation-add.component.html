@@ -7,43 +7,37 @@
 
         <!-- Id -->
         <div class="form-group">
-            <input type="text"  name="id" [(ngModel)]="assetcreationservice.formAssetCreationData.id">
+            <input type="text" name="id" [(ngModel)]="assetcreationservice.formAssetCreationData.id">
         </div>
 
         <!-- make -->
 
         <div class="form-group">
             <label for="">Make</label>
-            <input type="text" name="make" #make="ngModel"
-                [(ngModel)]="assetcreationservice.formAssetCreationData.make" class="form-control"
-                placeholder="Enter make name" min="3" maxlength="25" required
+            <input type="text" name="make" #make="ngModel" [(ngModel)]="assetcreationservice.formAssetCreationData.make"
+                class="form-control" placeholder="Enter make name" min="3" maxlength="25" required
                 [ngClass]="{'is-invalid':make.touched && make.invalid}">
 
-         <!-- Validation error message -->
-         <div class="validation-error" *ngIf="make.touched && make.invalid">
-            <div *ngIf="make.errors.required">
-                Make Name is invalid or required
+            <!-- Validation error message -->
+            <div class="validation-error" *ngIf="make.touched && make.invalid">
+                <div *ngIf="make.errors.required">
+                    Make Name is invalid or required
+
+                </div>
 
             </div>
 
+            <!-- Designation -->
+<!-- 
+            <div class="form-group">
+                <label for="">Designation</label>
+                <input type="text" name="designation" #designation="ngModel"
+                    [(ngModel)]="assetcreationservice.formAssetCreationData.designation" class="form-control"
+                    placeholder="Enter designtion name" min="3" maxlength="25" required
+                    [ngClass]="{'is-invalid':designation.touched && designation.invalid}">
+
+            </div> -->
         </div>
+    </form>
 
-        <!-- Designation -->
-
-        <div class="form-group">
-            <label for="">Designation</label>
-            <input type="text" name="designation" #designation="ngModel"
-                [(ngModel)]="employeeService.formEmployeeData.designation" class="form-control"
-                placeholder="Enter designtion name" min="3" maxlength="25" required
-                [ngClass]="{'is-invalid':designation.touched && designation.invalid}">
-
-
-
-
-
-        </div>
-
-        </form>
-
-        </div>
-
+</div>
