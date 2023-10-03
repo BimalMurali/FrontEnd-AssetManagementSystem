@@ -1,0 +1,21 @@
+.not-found-container{
+    text-align: center;
+    margin-top: 50px;
+}
+img{
+    width:100px;
+    height:100px;
+}
+.rounded-button{
+    border: none;
+    border-radius: 20px;
+    background-color: red;
+    color: #fff;
+    padding: 10px 20 px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.rounded-button:hover{
+    background-color: blue;
+}
