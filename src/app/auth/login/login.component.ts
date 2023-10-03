@@ -36,53 +36,73 @@ export class LoginComponent implements OnInit {
   }
 
   //Functionality
-  loginCredentials():void{
+  loginCredentials(): void {
     //Setting Value to isSubmitted
-    this.isSubmitted=true;
+    this.isSubmitted = true;
 
     //Checking form is Valid
-    if(this.loginForm.invalid){
-      this.error="Please enter username and Password"
+    if (this.loginForm.invalid) {
+      this.error = "Please enter username and Password"
       return;
     }
 
     //form is valid
-    else{
+    else {
       console.log("Form is valid");
-    //Call service for login
-    this.authService.loginVerify(this.loginForm.value)
-    .subscribe(response =>{
-      console.log(response);
+      //Call service for login
+      this.authService.loginVerify(this.loginForm.value)
+        .subscribe(response => {
+          console.log(response);
 
-      if(response==null){
-        this.error="Invalid response"
-      }
-      else if(response.data.role===3){
-        this.router.navigate(["/assetcreation"]);}
-        else if(response.data.role===3){
-          this.router.navigate(["/assetdefinition"]);
+          if (response.data == 'INVALID CREDENTIALS!!') {
+            this.error = "Invalid response"
+            console.log(this.error);
+          }
+
+          else if (response.data.role === 1) {
+            this.error = ' ';
+            localStorage.setItem("USER_NAME", response.data.Username);
+            sessionStorage.setItem("USER_NAME", response.data.Username);
+            localStorage.setItem("ROLE", response.data.role);
+            localStorage.setItem("JWT_UTIL", response.data.ACCESSTOKEN);
+            this.router.navigate(["/assetdefinition"]);
+
+          }
+
+          else if (response.data.role === 2) {
+            this.error = ' ';
+            localStorage.setItem("USER_NAME", response.data.Username);
+            sessionStorage.setItem("USER_NAME", response.data.Username);
+            localStorage.setItem("ROLE", response.data.role);
+            localStorage.setItem("JWT_UTIL", response.data.ACCESSTOKEN);
+            this.router.navigate(["/vendordetails"]);
+          }
+
+          else if (response.data.role === 3) {
+            this.error = ' ';
+            localStorage.setItem("USER_NAME", response.data.Username);
+            sessionStorage.setItem("USER_NAME", response.data.Username);
+            localStorage.setItem("ROLE", response.data.role);
+            localStorage.setItem("JWT_UTIL", response.data.ACCESSTOKEN);
+            this.router.navigate(["/purchaseorders"]);
+          }
+
+
+          else if (response.data.role === 4) {
+            this.error = ' ';
+            localStorage.setItem("USER_NAME", response.data.Username);
+            sessionStorage.setItem("USER_NAME", response.data.Username);
+            localStorage.setItem("ROLE", response.data.role);
+            localStorage.setItem("JWT_UTIL", response.data.ACCESSTOKEN);
+            this.router.navigate(["/assetcreation"]);
+
+          }
+
 
         }
-      
-      // //Session storage
-      // sessionStorage.setItem("USER_NAME",response.data.Username);
-      
-      // //Local storage
-      // localStorage.setItem("TOKEN",response.data.ACCESSTOKEN);
-    
-    
-    else if(response.data.role===2){
-      this.router.navigate(["/vendors/home"]);
-      
-      //Session storage
-      sessionStorage.setItem("USER_NAME",response.data.Username);
-      
-      //Local storage
-      localStorage.setItem("TOKEN",response.data.ACCESSTOKEN);
+        
+        )
     }
-  })
-    }
-
-
   }
 }
+
