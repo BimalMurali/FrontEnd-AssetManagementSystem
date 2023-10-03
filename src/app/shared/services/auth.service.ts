@@ -14,6 +14,6 @@ export class AuthService {
   // Verify login userName and Password
   public loginVerify(user:User){
     // call the webAPI for checking username and password
-    return this.httpClient.get<User>(environment.apiUrl+'/api/users/'+user.userName+'&'+user.password)
+    return this.httpClient.get<User>(environment.apiUrl+'/api/users/'+user.userName+'/'+user.password)
   }
 }
