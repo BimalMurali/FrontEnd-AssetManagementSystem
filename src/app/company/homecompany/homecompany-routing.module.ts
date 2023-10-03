@@ -4,7 +4,8 @@ import {VendorListComponent} from '../vendor-list/vendor-list.component'
 import { ViewStatusComponent } from '../view-status/view-status.component';
 
 const routes: Routes = [
-  {path:'vendorlist',component:VendorListComponent},
+  {path:'vendorlist',component:VendorListComponent,
+loadChildren:()=>import('./../vendor-list/vendor-list.component').then(x=>x.VendorListComponent)},
   {path:'viewstatus',component:ViewStatusComponent},
 ];
 
