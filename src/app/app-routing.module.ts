@@ -8,7 +8,10 @@ import {CompanyComponent} from './company/company.component'
 import {NotfoundComponent} from './shared/notfound/notfound.component'
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
+  {path: '',redirectTo:'home',pathMatch:'full'},
+
+  { 
+    path: 'home', component: HomeComponent },
 
   {
     path: 'company',
