@@ -1,0 +1,9 @@
+li{
+    color: white;
+}
+/* Custom CSS to highlight the active link on hover */
+.navbar-light .navbar-nav .nav-item.active .nav-link:hover {
+    background-color: #fff; /* Change this color to your desired hover color */
+    color: blue; /* Change this color to your desired text color */
+  }
+  

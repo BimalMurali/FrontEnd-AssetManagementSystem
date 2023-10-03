@@ -1,3 +1,24 @@
-  <p>vendors works!</p>
-  <router-outlet></router-outlet>
+<div class="conatiner">
+  <nav class="navbar navbar-expand-lg navbar-light bg-secondary">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/vendors/home']">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/vendors/listassets']">List Assets</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/vendors/editassets']">Edit Assets</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/vendors/addassets']">Add Assets</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/vendors/updatestatus']">Update Status</a>
+      </li>
+    </ul>
+  </nav>
+</div>
+
+<router-outlet></router-outlet>
 

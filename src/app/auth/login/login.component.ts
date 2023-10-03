@@ -58,7 +58,7 @@ export class LoginComponent implements OnInit {
         this.error="Invalid response"
       }
       else if(response.data.role===1){
-        this.router.navigate(["/company/homecompany"]);
+        this.router.navigate(["/company/home"]);
       
       //Session storage
       sessionStorage.setItem("USER_NAME",response.data.Username);
@@ -68,7 +68,7 @@ export class LoginComponent implements OnInit {
     
     }
     else if(response.data.role===2){
-      this.router.navigate(["/vendors/homevendors"]);
+      this.router.navigate(["/vendors/home"]);
       
       //Session storage
       sessionStorage.setItem("USER_NAME",response.data.Username);
