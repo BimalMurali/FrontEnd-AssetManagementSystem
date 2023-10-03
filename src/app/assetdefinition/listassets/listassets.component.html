@@ -1,0 +1,34 @@
+<div class="container">
+    <!--Add Assets-->
+    
+    <table class="table table-striped table=bordered">
+        <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Asset Name</th>
+                <th>Asset Type ID</th>
+                <th>Category</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let AssetDefintion of assetService.assets">
+                <td>{{AssetDefintion.id}}</td>
+                <td>{{AssetDefintion.assetName}}</td>
+                <td>{{AssetDefintion.assetTypeId}}</td>
+                <td>{{AssetDefintion.category}}</td>
+                
+                <!-- <td><button type="button" class="btn btn-sm btn-outline-info"
+                  (click)="updateAssets(AssetDefintion)">
+                  <i class="fa fa-edit"> -->
+                <!-- </i></button>&nbsp; -->
+                <!-- <button type="button" class="btn btn-sm btn-outline-danger" (click)="deleteEmployee(employee.id)">
+                  <i class="fa fa-trash">
+                </i></button> -->
+
+              </tr>
+            </tbody>
+          </table>
+    </table>
+
+</div>

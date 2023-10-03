@@ -1,0 +1,21 @@
+<div class="conatiner">
+    <table class="table table-striped table-bordered">
+        <thead>
+          <tr>
+            <th >ID</th>
+            <th >Purchase Order Number</th>
+            <th >Order Date</th>
+            <th >Delivery Date</th> 
+          </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let p of purchaseorderservice.order">
+            <td>{{p.id}}</td>
+            <td>{{p.purchaseOrderNo}}</td>
+            <td>{{p.orderDate}}</td>
+            <td>{{p.deliveryDate}}</td>
+          </tr>
+        </tbody>
+      </table>
+</div>  
+<router-outlet></router-outlet>
