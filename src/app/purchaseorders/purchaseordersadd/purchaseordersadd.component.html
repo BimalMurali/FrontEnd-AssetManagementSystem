@@ -1,1 +1,32 @@
-<p>Hello</p>
+<div class="container">
+    <h3>New Purchase Order</h3>
+    <hr>
+    <!-- Template driven from style -->
+    <form name="frmPurchaseOrders" #form="ngForm" autocomplete="off" (ngSubmit)="onSubmit(form)">
+
+
+        <!-- Id -->
+        <div class="form-group">
+            <input type="hidden" readonly name="id" [(ngModel)]="purchaseorderservice.formPurchaseOrderData.id">
+        </div>
+
+        <!--PurchaseOrderNo-->
+        <div class="form-group">
+            <label>Purchase Order No.</label>
+            <br>
+            <input type="text" name="purchaseorderno"
+                [(ngModel)]="purchaseorderservice.formPurchaseOrderData.purchaseOrderNo">
+        </div>
+
+        <!--Order Date-->
+        <div class="form-group">
+            <label>Order Date</label>
+            <br>
+            <input type="date" name="orderDate" [(ngModel)]="purchaseorderservice.formPurchaseOrderData.orderDate">
+        </div>
+
+
+
+    </form>
+
+</div>
