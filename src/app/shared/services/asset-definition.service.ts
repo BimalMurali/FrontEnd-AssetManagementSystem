@@ -16,6 +16,9 @@ export class AssetDefinitionService {
   //list of employees
   assets: Assetdefinition[];
 
+  // form
+  formAssetDefinitionData:Assetdefinition=new Assetdefinition();
+
   //list of departments
   assetTypes:Assettype[];
 
@@ -37,11 +40,11 @@ export class AssetDefinitionService {
   }
 
   //2 Get all Employees - Observable Types
-  getAllEmployeesList(): Observable<any>{
-    return this.httpClient.get(environment.apiUrl +'/api/assets');
-  }
+  // getAllEmployeesList(): Observable<any>{
+  //   return this.httpClient.get(environment.apiUrl +'/api/assets');
+  // }
  
-  getAllDepartment(): void{
+  getAllAssetType(): void{
 
     //getting the data
     this.httpClient.get(environment.apiUrl +'/api/assetTypes')
@@ -53,5 +56,9 @@ export class AssetDefinitionService {
     error=>{
       console.log('Error')
     });
+  }
+
+  insertAsset(assets: Assetdefinition): Observable<any>{
+    return this.httpClient.post(environment.apiUrl +'/api/assets',assets);
   }
 }
