@@ -1,5 +1,21 @@
 <div class="container">
     <!--Add Assets-->
+
+    <div class="header">
+      <div class="row">
+        <div class="col-sm-8">
+          <input type="search" class="form-control custom-margin-search" placeholder="Search text here"
+          [(ngModel)]="searchTerm">
+        </div>
+
+        <div class="col-sm-4">
+          <!-- <a [routerLink]="['/employees/add']" role="button"
+          class="btn btn-outline-primary custom-margin custom-margin-add">
+              <span><i class="fa fa-user-plus"></i></span>
+              &nbsp;</a> -->
+        </div>
+      </div>
+    </div>
     
     <table class="table table-striped table=bordered">
         <table class="table table-striped">
@@ -7,15 +23,15 @@
               <tr>
                 <th>ID</th>
                 <th>Asset Name</th>
-                <th>Asset Type ID</th>
+                <th>Asset Type </th>
                 <th>Category</th>
               </tr>
             </thead>
             <tbody>
-              <tr *ngFor="let AssetDefintion of assetService.assets">
+              <tr *ngFor="let AssetDefintion of assetService.assets | filter: searchTerm | paginate:{ itemsPerPage:pageSize,currentPage: page}">
                 <td>{{AssetDefintion.id}}</td>
                 <td>{{AssetDefintion.assetName}}</td>
-                <td>{{AssetDefintion.assetTypeId}}</td>
+                <td>{{ AssetDefintion?.assetType?.assetType }}</td>
                 <td>{{AssetDefintion.category}}</td>
 
                 <td><button type="button" class="btn btn-sm btn-outline-info"
@@ -35,5 +51,8 @@
             </tbody>
           </table>
     </table>
-
-</div>
+    <div class="footer">
+      <pagination-controls class="custom-page" (pageChange)="page=$event">
+      </pagination-controls>
+      </div>
+      </div>

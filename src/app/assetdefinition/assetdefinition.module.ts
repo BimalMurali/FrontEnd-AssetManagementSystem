@@ -8,6 +8,8 @@ import { UpdateassetsComponent } from './updateassets/updateassets.component';
 import { ListassetsComponent } from './listassets/listassets.component';
 import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
+import{ Ng2SearchPipeModule} from 'ng2-search-filter';
+import{NgxPaginationModule} from 'ngx-pagination';
 
 
 @NgModule({
@@ -15,7 +17,9 @@ import { HomeComponent } from './home/home.component';
   imports: [
     CommonModule,
     AssetdefinitionRoutingModule,
-    FormsModule
+    FormsModule,
+    Ng2SearchPipeModule,
+    NgxPaginationModule
   ]
 })
 export class AssetdefinitionModule { }

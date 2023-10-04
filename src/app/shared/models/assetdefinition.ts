@@ -5,7 +5,7 @@ export class Assetdefinition {
     category:string='';
     assetTypeId:number=0;
 
-    assettype: Assettype = new Assettype();
+    assetType: Assettype = new Assettype();
 
 
 }
