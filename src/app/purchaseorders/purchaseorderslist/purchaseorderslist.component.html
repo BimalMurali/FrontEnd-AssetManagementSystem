@@ -14,20 +14,22 @@
         <th>Purchase Order ID</th>
         <th>Order Date</th>
         <th>Delivery Date</th>
-        <th>Asset Type Name</th>
+        <!-- <th>Asset Type Name</th> -->
         <th>Vendor Name </th>
         <th>Status</th>
+        <th>Is Active</th>
       </tr>
     </thead>
     <tbody>
       <tr
         *ngFor="let p of purchaseorderservice.order|filter:searchTerm|paginate :{itemsPerPage:pageSize,currentPage:page}">
-        <td>{{p.id}}</td>
+        <td >{{p.id}}</td>
         <td>{{p.orderDate|date:'dd-MM-yyyy'}}</td>
         <td>{{p.deliveryDate|date:'dd-MM-yyyy'}}</td>
-        <td>{{getAssetNameById(p.assetId)}}</td>
+        <!-- <td >{{getAssetNameById(p.assetId)}}</td> -->
         <td>{{getVendorNameById(p.vendorId)}}</td>
         <td>{{getStatusNameById(p.statusId)}}</td>
+        <td>{{p.active}}</td>
         <td><button type="button" class="btn btn-sm btn-outline-info" (click)="editPurchaseOrder(p)">
             <i class="fa fa-edit"></i></button>&nbsp;
           <button type="button" class="btn  btn-sm btn-danger" (click)="disableOrder(p.id)"><i

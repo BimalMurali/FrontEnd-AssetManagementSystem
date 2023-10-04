@@ -54,7 +54,7 @@ export class PurchaseordersService {
         });
   }
   getAllAssetsDef(): void {
-    this.httpClient.get(environment.apiUrl + '/api/assets')
+    this.httpClient.get(environment.apiUrl + '/api/assettype')
     .toPromise()
     .then(response =>{
       console.log(response);
