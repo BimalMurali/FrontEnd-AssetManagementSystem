@@ -35,7 +35,7 @@ export class PurchaseordersService {
       .toPromise()
       .then(response => {
         console.log(response);
-        this.order = response as Purchaseorder[];
+        this.status = response as Status[];
       },
         error => {
           console.log(error);

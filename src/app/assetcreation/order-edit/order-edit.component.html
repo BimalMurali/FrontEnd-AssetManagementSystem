@@ -22,7 +22,7 @@
         <div class="form-group">
             <label for="">Asset Types</label>
             <select name="assetId" id="assetId" #assetTypeId="ngModel"
-                [(ngModel)]="purchaseorderservice.formPurchaseOrderData.assetId" class="form-control" required disabled>
+                [(ngModel)]="purchaseorderservice.formPurchaseOrderData.assetId" class="form-control" class="form-control readonly-select" required>
                 <option value=0 selected disabled>---Select Asset Type</option>
                 <option *ngFor="let dept of purchaseorderservice.assetdefinition" value="{{dept.id}}">
                     {{dept.assetName}}
@@ -53,7 +53,7 @@
         <div class="form-group">
             <label for="">Vendors</label>
             <select name="vendorId" id="vendorID" #vendorAssetTypeID="ngModel"
-                [(ngModel)]="purchaseorderservice.formPurchaseOrderData.vendorId" class="form-control" required disabled>
+                [(ngModel)]="purchaseorderservice.formPurchaseOrderData.vendorId" class="form-control" class="form-control readonly-select" required  >
                 <option value=0 selected disabled>---Select vendors</option>
                 <option *ngFor="let vendor of purchaseorderservice.vendors" value="{{vendor.id}}">
                     {{vendor.vendorName}}
@@ -67,16 +67,21 @@
         <div class="form-group">
             <label>Delivery  Date</label>
             <br>
-            <input type="date" name="deliveryDate" [(ngModel)]="purchaseorderservice.formPurchaseOrderData.deliveryDate" >
+            <input type="date" name="deliveryDate" [(ngModel)]="purchaseorderservice.formPurchaseOrderData.deliveryDate"  >
         </div>
 
         <!--Status -->
-         <!--Status -->
          <div class="form-group">
-            <label for="">Status</label>
-            <br>
-            <input type="text"class="form-control" value="1. PO RAISED WITH SUPPLIER">
+            <label for="">update status</label>
+            <select name="statusId" id="statusId" #statusId="ngModel" [(ngModel)]="purchaseorderservice.formPurchaseOrderData.statusId" class="form-control"  required>
+                <option value=0 selected disabled>---Select status</option>
+                <option *ngFor="let dept of purchaseorderservice.status" value="{{dept.statusId}}">
+                    {{dept.statusNames}}
+                </option>
+            </select>
         </div>
+
+
         
           <!-- Submit button -->
           <div class="form-group">
