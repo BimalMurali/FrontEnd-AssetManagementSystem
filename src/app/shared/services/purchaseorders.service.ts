@@ -39,7 +39,7 @@ export class PurchaseordersService {
         });
   }
   getAllAssetsDef(): void {
-    this.httpClient.get(environment.apiUrl + '/api/assettype')
+    this.httpClient.get(environment.apiUrl + '/api/assets')
     .toPromise()
     .then(response =>{
       console.log(response);
@@ -66,6 +66,7 @@ export class PurchaseordersService {
 
 
   insertPurchaseOrder(purchaseorder: Purchaseorder): Observable<any> {
+    purchaseorder.statusId=1
     return this.httpClient.post(environment.apiUrl + '/api/purchaseorders', purchaseorder)
   }
 }

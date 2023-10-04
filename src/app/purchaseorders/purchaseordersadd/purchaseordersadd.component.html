@@ -1,4 +1,6 @@
 <div class="container">
+    <br>
+    <br>
     <h3>New Purchase Order</h3>
     <hr>
     <!-- Template driven from style -->
@@ -10,13 +12,6 @@
             <input type="hidden" readonly name="id" [(ngModel)]="purchaseorderservice.formPurchaseOrderData.id">
         </div>
 
-        <!--PurchaseOrderNo-->
-        <div class="form-group">
-            <label>Purchase Order No.</label>
-            <br>
-            <input type="text" name="purchaseorderno"
-                [(ngModel)]="purchaseorderservice.formPurchaseOrderData.purchaseOrderNo">
-        </div>
 
         <!--Order Date-->
         <div class="form-group">
@@ -29,7 +24,7 @@
         <div class="form-group">
             <label for="">Asset Types</label>
             <select name="assetId" id="assetId" #assetTypeId="ngModel"
-                [(ngModel)]="purchaseorderservice.formPurchaseOrderData.assetTypeId" class="form-control" required>
+                [(ngModel)]="purchaseorderservice.formPurchaseOrderData.assetId" class="form-control" required>
                 <option value=0 selected disabled>---Select Asset Type</option>
                 <option *ngFor="let dept of purchaseorderservice.assetdefinition" value="{{dept.id}}">
                     {{dept.assetName}}
@@ -59,7 +54,7 @@
         <div class="form-group">
             <label for="">Vendors</label>
             <select name="vendorId" id="vendorID" #vendorAssetTypeID="ngModel"
-                [(ngModel)]="purchaseorderservice.formPurchaseOrderData.vendorid" class="form-control" required>
+                [(ngModel)]="purchaseorderservice.formPurchaseOrderData.vendorId" class="form-control" required>
                 <option value=0 selected disabled>---Select vendors</option>
                 <option *ngFor="let vendor of purchaseorderservice.vendors" value="{{vendor.id}}">
                     {{vendor.vendorName}}
@@ -67,25 +62,14 @@
             </select>
         </div>
 
-        <!-- vendorAssetTypeID -->
-        <!-- 
-            <div class="form-group">
-                <label for="">vendorAssetTypeID</label>
-                <input type="text" name="vendorAssetTypeID" #vendorAssetTypeID="ngModel"
-                    [(ngModel)]="assetcreationservice.formAssetCreationData.vendorAssetTypeID" class="form-control"
-                    placeholder="Enter vendorAssetTypeID" min="3" maxlength="25" required
-                    [ngClass]="{'is-invalid':vendorAssetTypeID.touched && vendorAssetTypeID.invalid}">
+        <!--Status -->
+        <div class="form-group">
+            <label for="">Status</label>
+            <br>
+            <input type="text" readonly class="form-control" value="1. PO RAISED WITH SUPPLIER">
+        </div>
 
-                
-                <div class="validation-error" *ngIf="vendorAssetTypeID.touched && vendorAssetTypeID.invalid">
-                    <div *ngIf="vendorAssetTypeID.errors.required">
-                        vendorAssetTypeID is invalid or required
 
-                    </div>
-
-                </div>
-
-            </div> -->
         <!-- Submit button -->
         <div class="form-group">
             <button type="submit" class="btn-lg btn-primary form-control"
