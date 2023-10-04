@@ -60,33 +60,34 @@
                 placeholder="Enter assetTypeId" min="3" maxlength="25" required
                 [ngClass]="{'is-invalid':assetTypeId.touched && assetTypeId.invalid}"> -->
 
-            <!-- Validation error message -->
-             <!-- <div class="validation-error" *ngIf="assetTypeId.touched && assetTypeId.invalid">
+            <!--Validation error message -->
+             <div class="validation-error" *ngIf="assetTypeId.touched && assetTypeId.invalid">
                 <div *ngIf="assetTypeId.errors.required">
-                    modelId is invalid or required</div>
+                    Asset type is invalid or required</div>
             </div>
-        </div> --> 
+    
 
         <!-- Category -->
-        <div class="form-group">
-            <label for="">Category</label>
-            <input type="text" name="category" #category="ngModel"
-                [(ngModel)]="assetService.formAssetDefinitionData.category" class="form-control"
-                placeholder="Enter category" min="3" maxlength="25" required
-                [ngClass]="{'is-invalid':category.touched && category.invalid}">
-
+        <!-- Category Dropdown -->
+<div class="form-group">
+    <label for="category">Category</label>
+    <select name="category" id="category" #category="ngModel"
+            [(ngModel)]="assetService.formAssetDefinitionData.category" class="form-control"
+            required [ngClass]="{'is-invalid': category.touched && category.invalid}">
+            <option value="" disabled selected>-----Select Category</option>
+      <option value="SW">Software (SW)</option>
+      <option value="HW">Hardware (HW)</option>
+    </select>
+  </div>
             <!-- Validation error message -->
             <div class="validation-error" *ngIf="category.touched && category.invalid">
                 <div *ngIf="category.errors.required">
                     category is invalid or required
-
                 </div>
 
             </div>
+            <br>
 
-        </div>
-
-        
         <!-- Submit button -->
         <div class="form-group">
             <button type="submit" class="btn-lg btn-primary form-control"
