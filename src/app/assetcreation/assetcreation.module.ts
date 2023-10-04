@@ -8,6 +8,8 @@ import { AssetcreationEditComponent } from './assetcreation-edit/assetcreation-e
 import { AssetcreationAddComponent } from './assetcreation-add/assetcreation-add.component';
 import { AssetcreationDeleteComponent } from './assetcreation-delete/assetcreation-delete.component';
 import { FormsModule } from '@angular/forms';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import {NgxPaginationModule} from 'ngx-pagination';
 import { OrderListComponent } from './order-list/order-list.component';
 import { OrderEditComponent } from './order-edit/order-edit.component';
 
@@ -19,7 +21,9 @@ import { OrderEditComponent } from './order-edit/order-edit.component';
   imports: [
     CommonModule,
     AssetcreationRoutingModule,
-    FormsModule
+    FormsModule,
+    Ng2SearchPipeModule,
+    NgxPaginationModule
   ]
 })
 export class AssetcreationModule { }

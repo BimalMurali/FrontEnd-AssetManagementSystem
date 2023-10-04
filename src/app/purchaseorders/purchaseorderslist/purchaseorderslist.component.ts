@@ -10,6 +10,11 @@ import { Purchaseorder } from 'src/app/shared/models/purchaseorder';
 })
 export class PurchaseorderslistComponent implements OnInit {
 
+  searchTerm=' ';
+  page:number=1;
+  pageSize:number=5;
+ 
+
   constructor(public purchaseorderservice:PurchaseordersService,private router:Router) { }
 
   ngOnInit(): void {
