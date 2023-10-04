@@ -62,6 +62,11 @@ export class VendordetailsService {
     return this.httpClient.put(environment.apiUrl + '/api/vendors', vendors);
   }
 
+  disableOrder(id:number){
+    return this.httpClient.get(environment.apiUrl+'/api/vendors/'+id);
+  }
+
+
   public logOut() {
     //clear all local and session storage keys
     localStorage.removeItem("USER_NAME");

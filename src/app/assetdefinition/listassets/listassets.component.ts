@@ -39,6 +39,22 @@ export class ListassetsComponent implements OnInit {
     this.assetService.formAssetDefinitionData=Object.assign({},assetdefinition);
   }
 
+  //delete
+  disableAsset(_id:number){
+    if(confirm("Do you want to delete this record?")){
+      this.assetService.disableAsset(_id)
+      .subscribe(
+        (response)=>{
+          console.log(response);
+          this.assetService.getAllAssets();
+        },
+        (error)=>{
+          console.log(error);
+        }
+      )
+    }
+  }
+
   
   }
 

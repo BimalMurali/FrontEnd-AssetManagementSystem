@@ -84,10 +84,10 @@ getAllVendors(): void {
 // get all asset definitions
 // http://localhost:9091/api/assettype
 getAllAssetsDef(): void {
-  this.httpClient.get(environment.apiUrl + '/api/assets')
+  this.httpClient.get(environment.apiUrl + '/api/assettype')
   .toPromise()
   .then(response =>{
-    // console.log(response);
+    console.log(response);
     this.assetdefinition=response as Assetdefinition[];
   },
   error=>{
@@ -104,9 +104,14 @@ public logOut() {
   sessionStorage.removeItem("USER_NAME");
   localStorage.removeItem("ROLE");
   localStorage.removeItem("JWT_UTIL");
-
   this.router.navigate(['home'])
 }
 
+disableOrder(id:number){
+  return this.httpClient.get(environment.apiUrl+'/api/deleteasset/'+id);
+  
 
+
+
+}
 }

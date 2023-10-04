@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { VendordetailsService } from 'src/app/shared/services/vendordetails.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-vendoradd',
@@ -12,6 +13,8 @@ export class VendoraddComponent implements OnInit {
 
   constructor(public vendordetailsService: VendordetailsService,
     private router: Router) { }
+
+    private vendorDataSubscription: Subscription;
 
   ngOnInit(): void {
     this.vendordetailsService.getAllVendors();
@@ -44,6 +47,7 @@ export class VendoraddComponent implements OnInit {
     //reset
     form.reset();
     this.router.navigateByUrl("/vendordetails/list")
+    this.vendorDataSubscription.unsubscribe();
 
 }
 
