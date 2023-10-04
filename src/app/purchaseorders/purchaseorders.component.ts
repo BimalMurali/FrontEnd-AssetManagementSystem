@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PurchaseordersService } from '../shared/services/purchaseorders.service';
 
 @Component({
   selector: 'app-purchaseorders',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PurchaseordersComponent implements OnInit {
 
-  constructor() { }
+  constructor(private purchaseorderservice:PurchaseordersService) { }
 
   ngOnInit(): void {
+  }
+
+  logOut(){
+    console.log("Log out");
+    this.purchaseorderservice.logOut();
   }
 
 }
