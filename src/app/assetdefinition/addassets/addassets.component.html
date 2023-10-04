@@ -89,8 +89,10 @@
         
         <!-- Submit button -->
         <div class="form-group">
-            <button type="submit" class="btn-lg btn-primary form-control"
-                >INSERT
+
+            <button type="submit" class="btn-lg btn-secondary form-control"
+            [disabled]="!(form.valid && form.dirty)"
+                >INSERTgit
             </button>
 
         </div>
