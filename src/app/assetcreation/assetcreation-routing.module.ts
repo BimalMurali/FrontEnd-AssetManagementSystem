@@ -7,7 +7,7 @@ import { AssetcreationDeleteComponent } from './assetcreation-delete/assetcreati
 
 const routes: Routes = [
   {path:'list',component:AssetcreationListComponent},
-  {path:'edit',component:AssetcreationEditComponent},
+  {path:'edit/:id',component:AssetcreationEditComponent},
   {path:'add',component:AssetcreationAddComponent},
   {path:'delete',component:AssetcreationDeleteComponent},
 
