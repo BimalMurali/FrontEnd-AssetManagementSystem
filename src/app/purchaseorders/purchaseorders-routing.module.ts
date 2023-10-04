@@ -4,12 +4,14 @@ import { PurchaseorderslistComponent } from './purchaseorderslist/purchaseorders
 import { PurchaseorderseditComponent } from './purchaseordersedit/purchaseordersedit.component';
 import { PurchaseordersdeleteComponent } from './purchaseordersdelete/purchaseordersdelete.component';
 import { PurchaseordersaddComponent } from './purchaseordersadd/purchaseordersadd.component';
+import {HomeComponent} from './home/home.component'
 
 const routes: Routes = [
   {path:'list',component:PurchaseorderslistComponent},
-  {path:'edit',component:PurchaseorderseditComponent},
+  {path:'edit/:id',component:PurchaseorderseditComponent},
   {path:'delete',component:PurchaseordersdeleteComponent},
   {path:'add',component:PurchaseordersaddComponent},
+  {path:'home',component:HomeComponent}
 ];
 
 @NgModule({

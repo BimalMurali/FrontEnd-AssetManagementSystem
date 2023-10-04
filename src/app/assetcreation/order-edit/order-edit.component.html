@@ -1,0 +1,97 @@
+<div class="container">
+    <h3>Edit Purchase Order</h3>
+    <hr>
+    <!-- Template driven from style -->
+    <form name="frmPurchaseOrders" #form="ngForm" autocomplete="off" (ngSubmit)="onSubmit(form)">
+
+
+        <!-- Id -->
+        <div class="form-group">
+            <input type="hidden" readonly name="id" [(ngModel)]="purchaseorderservice.formPurchaseOrderData.id">
+        </div>
+
+
+        <!--Order Date-->
+        <div class="form-group">
+            <label>Order Date</label>
+            <br>
+            <input type="date" name="orderDate" [(ngModel)]="purchaseorderservice.formPurchaseOrderData.orderDate" readonly>
+        </div>
+
+        <!-- dropdown list for asset types -->
+        <div class="form-group">
+            <label for="">Asset Types</label>
+            <select name="assetId" id="assetId" #assetTypeId="ngModel"
+                [(ngModel)]="purchaseorderservice.formPurchaseOrderData.assetId" class="form-control" class="form-control readonly-select" required>
+                <option value=0 selected disabled>---Select Asset Type</option>
+                <option *ngFor="let dept of purchaseorderservice.assetdefinition" value="{{dept.id}}">
+                    {{dept.assetName}}
+                </option>
+            </select>
+        </div>
+        
+
+
+        <!-- Asset Definition Id -->
+
+        <!-- <div class="form-group">
+            <label for="">Asset Definiton Id</label>
+            <input type="text" name="modelId" #modelId="ngModel"
+                [(ngModel)]="assetcreationservice.formAssetCreationData.assetTypeId" class="form-control"
+                placeholder="Enter modelId" min="3" maxlength="25" required
+                [ngClass]="{'is-invalid':modelId.touched && modelId.invalid}">
+
+            
+            <div class="validation-error" *ngIf="modelId.touched && modelId.invalid">
+                <div *ngIf="modelId.errors.required">
+                    modelId is invalid or required
+                </div>
+
+            </div>
+        </div> -->
+        <!-- dropdown list for vendors -->
+        <div class="form-group">
+            <label for="">Vendors</label>
+            <select name="vendorId" id="vendorID" #vendorAssetTypeID="ngModel"
+                [(ngModel)]="purchaseorderservice.formPurchaseOrderData.vendorId" class="form-control" class="form-control readonly-select" required  >
+                <option value=0 selected disabled>---Select vendors</option>
+                <option *ngFor="let vendor of purchaseorderservice.vendors" value="{{vendor.id}}">
+                    {{vendor.vendorName}}
+                </option>
+            </select>
+        </div>
+
+
+        <!-- delivery date -->
+        <!--Order Date-->
+        <div class="form-group">
+            <label>Delivery  Date</label>
+            <br>
+            <input type="date" name="deliveryDate" [(ngModel)]="purchaseorderservice.formPurchaseOrderData.deliveryDate"  >
+        </div>
+
+        <!--Status -->
+         <div class="form-group">
+            <label for="">update status</label>
+            <select name="statusId" id="statusId" #statusId="ngModel" [(ngModel)]="purchaseorderservice.formPurchaseOrderData.statusId" class="form-control"  required>
+                <option value=0 selected disabled>---Select status</option>
+                <option *ngFor="let dept of purchaseorderservice.status" value="{{dept.statusId}}">
+                    {{dept.statusNames}}
+                </option>
+            </select>
+        </div>
+
+
+        
+          <!-- Submit button -->
+          <div class="form-group">
+            <button type="submit" class="btn-lg btn-secondary form-control"
+                [disabled]="!(form.valid && form.dirty)">UPDATE
+            </button>
+
+        </div>
+
+
+
+    </form>
+</div>

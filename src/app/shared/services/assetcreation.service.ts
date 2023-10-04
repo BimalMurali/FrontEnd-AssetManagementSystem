@@ -5,6 +5,7 @@ import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
 import { Vendors } from '../models/vendors';
 import { Assetdefinition } from '../models/assetdefinition';
+import { Purchaseorder } from '../models/purchaseorder';
 
 
 @Injectable({
@@ -14,8 +15,11 @@ export class AssetcreationService {
   // list of assetcreations
   assetdefinitions:Assetcreation[];
 
+ 
+
   // form
   formAssetCreationData:Assetcreation=new Assetcreation();
+
 
   // list of vendors
   vendors:Vendors[];
@@ -56,6 +60,11 @@ updateAssetCreation(assetcreation:Assetcreation):Observable<any>{
   return this.httpClient.put(environment.apiUrl + '/api/assetcreation',assetcreation)
 }
 
+// update order status and delivery date
+// updateStatus(order:Purchaseorder):Observable<any>{
+//   return this.httpClient.put(environment.apiUrl + '/api/purchaseorders',order)
+// }
+
 
 // get all vendors
 // http://localhost:9091/api/vendors
@@ -84,6 +93,10 @@ getAllAssetsDef(): void {
     console.log(error);
   });
 }
+
+// updatePurchaseOrders(purchaseorder:Purchaseorder):Observable<any>{
+//   return this.httpClient.put(environment.apiUrl+'/api/purchaseorders',purchaseorder);
+// }
 
 
 

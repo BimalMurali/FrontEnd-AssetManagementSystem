@@ -10,6 +10,9 @@ import { AssetcreationService } from 'src/app/shared/services/assetcreation.serv
 })
 export class AssetcreationListComponent implements OnInit {
 
+  searchTerm=' ';
+  page:number=1;
+  pageSize:number=5;
   constructor(public assetcreationservice: AssetcreationService,private router:Router) { }
 
   ngOnInit(): void {

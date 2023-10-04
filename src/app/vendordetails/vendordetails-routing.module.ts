@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { VendorlistComponent } from './vendorlist/vendorlist.component';
 import { VendoreditComponent } from './vendoredit/vendoredit.component';
 import { VendoraddComponent } from './vendoradd/vendoradd.component';
+import {HomeComponent} from './home/home.component'
 
 const routes: Routes = [
   {
@@ -16,6 +17,10 @@ const routes: Routes = [
   {
     path: 'add',
     component: VendoraddComponent
+  },
+  {
+    path:'home',
+    component:HomeComponent
   }
 ];
 
