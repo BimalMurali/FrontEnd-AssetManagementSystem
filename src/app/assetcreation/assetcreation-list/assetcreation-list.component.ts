@@ -35,6 +35,26 @@ export class AssetcreationListComponent implements OnInit {
     this.assetcreationservice.formAssetCreationData=Object.assign({},assetcreation);
   }
 
-
-
+  disableOrder(_id:number){
+    if(confirm("Do you want to delete this record?")){
+      this.assetcreationservice.disableOrder(_id)
+      .subscribe(
+        (response)=>{
+          console.log(response);
+          this.assetcreationservice.getAllAssetDefinitions();
+        },
+        (error)=>{
+        console.log(error);
+      }
+      )
+    
+    }
+  
+  }
 }
+
+
+
+
+
+
