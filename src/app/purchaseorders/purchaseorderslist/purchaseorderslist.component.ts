@@ -29,6 +29,16 @@ export class PurchaseorderslistComponent implements OnInit {
     return vendor ? vendor.vendorName : '';
   }
 
+  getAssetNameById(assetId: number): string {
+    const asset = this.purchaseorderservice.assetdefinition.find(asset => asset.id === assetId);
+    return asset ? asset.assetName : '';
+  }
+
+  getStatusNameById(statusId:number):string{
+    const status = this.purchaseorderservice.status.find(status => status.statusId === statusId);
+    return status ? status.statusNames : '';
+  }
+
   //update
   editPurchaseOrder(purchaseorder:Purchaseorder){
     console.log(purchaseorder);
