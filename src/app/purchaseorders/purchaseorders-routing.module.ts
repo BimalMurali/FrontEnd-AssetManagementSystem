@@ -7,7 +7,7 @@ import { PurchaseordersaddComponent } from './purchaseordersadd/purchaseordersad
 
 const routes: Routes = [
   {path:'list',component:PurchaseorderslistComponent},
-  {path:'edit',component:PurchaseorderseditComponent},
+  {path:'edit/:id',component:PurchaseorderseditComponent},
   {path:'delete',component:PurchaseordersdeleteComponent},
   {path:'add',component:PurchaseordersaddComponent},
 ];

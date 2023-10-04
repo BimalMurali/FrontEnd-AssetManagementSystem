@@ -24,8 +24,23 @@ export class PurchaseordersService {
   // list of asset definitions
   assetdefinition:Assetdefinition[];
 
+  //list of statuses
+  status:Status[];
+
 
   constructor(private httpClient: HttpClient) { }
+
+  getAllStatus():void{
+    this.httpClient.get(environment.apiUrl + '/api/status')
+      .toPromise()
+      .then(response => {
+        console.log(response);
+        this.order = response as Purchaseorder[];
+      },
+        error => {
+          console.log(error);
+        });
+  }
 
   getAllOrder(): void {
     this.httpClient.get(environment.apiUrl + '/api/purchaseorders')
@@ -69,4 +84,9 @@ export class PurchaseordersService {
     purchaseorder.statusId=1
     return this.httpClient.post(environment.apiUrl + '/api/purchaseorders', purchaseorder)
   }
+
+  updatePurchaseOrder(purchaseorder:Purchaseorder):Observable<any>{
+    return this.httpClient.put(environment.apiUrl+'/api/purchaseorders',purchaseorder);
+  }
+
 }
