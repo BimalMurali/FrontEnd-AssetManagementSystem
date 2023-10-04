@@ -5,8 +5,8 @@ export class Vendors {
     vendorName: string="";
     type: string="";
     assettypeid: number=0;
-    validFrom: Date;
-    validTo: Date;
+    validFrom: Date = new Date;
+    validTo: Date = new Date;
     address:string='';
 
     //Object oriented model

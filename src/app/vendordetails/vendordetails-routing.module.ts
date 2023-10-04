@@ -10,7 +10,7 @@ const routes: Routes = [
     component: VendorlistComponent
   },
   {
-    path: 'edit/id',
+    path: 'edit/:id',
     component: VendoreditComponent
   },
   {

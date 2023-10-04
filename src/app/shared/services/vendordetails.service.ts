@@ -47,11 +47,14 @@ export class VendordetailsService {
   }
   // insert
   insertVendordetails(vendors: Vendors): Observable<any> {
-    return this.httpClient.post(environment.apiUrl + '/api/vendordetails', vendors)
+    return this.httpClient.post(environment.apiUrl + '/api/vendors', vendors)
   }
   //update vendor details
   updateVendor(vendors: Vendors): Observable<any> {
-    return this.httpClient.put(environment.apiUrl + '/api/vendordetails', vendors);
+    console.log("hiii reached ")
+    console.log(vendors);
+    console.log(vendors.type);
+    return this.httpClient.put(environment.apiUrl + '/api/vendors', vendors);
   }
 }
 

@@ -1,6 +1,5 @@
-
 <div class="container">
-    <h3>Vendor Edit</h3>
+    <h3>Vendor Edit info</h3>
     <hr>
     <!-- Template driven from style -->
     <form name="frmVendorAdd" #form="ngForm" autocomplete="off" (ngSubmit)="onSubmit(form)">
@@ -9,10 +8,10 @@
 
         <!-- Vendor Id -->
         <div class="form-group">
-            <label for="">Vendor Id</label>
-            <input type="text" name="id" #id="ngModel" [(ngModel)]="vendordetailsService.formVendorData.id"
-                class="form-control" placeholder="Enter Vendor id" min="3" maxlength="25" required
-                [ngClass]="{'is-invalid':id.touched && id.invalid}">
+            <!-- <label for="">Vendor Id</label> -->
+            <input type="hidden" readonly name="id" #id="ngModel" [(ngModel)]="vendordetailsService.formVendorData.id">
+                <!-- class="form-control" placeholder="Enter Vendor id" min="3" maxlength="25" required 
+                [ngClass]="{'is-invalid':id.touched && id.invalid}"> -->
 
             <!-- Validation error message -->
             <div class="validation-error" *ngIf="id.touched && id.invalid">
@@ -44,7 +43,8 @@
                 Type:
 
             </label>
-            <input type="text" readonly value="supplier" class="form-control">
+            <input type="text" readonly id="type" name="type" #type="ngModel" value="supplier" 
+            [(ngModel)]="vendordetailsService.formVendorData.type" class="form-control">
         </div>
         <!-- dropdown list for asset def -->
         <div class="form-group">
@@ -80,15 +80,15 @@
         </div>
         <!--Valid To-->
         <div class="form-group">
-            <label>Valid From</label>
+            <label>validFrom</label>
             <input type="date" name="validFrom" #validFrom="ngModel"
                 [(ngModel)]="vendordetailsService.formVendorData.validFrom" class="form-control"
-                placeholder="Enter Valid From date" minlength="3" maxlength="25" required
+                placeholder="Enter EDate" minlength="3" maxlength="25" required
                 [ngClass]="{'is-invalid': validFrom.touched && validFrom.invalid}" />
             <!--Validation Error Message-->
             <div class="validation-error" *ngIf="validFrom.touched && validFrom.invalid">
                 <div *ngIf="validFrom.errors.required">
-                    Valid From date is invalid or required
+                    validFrom is invalid or required
                 </div>
 
             </div>
@@ -134,5 +134,3 @@
         
     </form>
     </div>
-
-
