@@ -11,6 +11,10 @@ import { AssetDefinitionService } from 'src/app/shared/services/asset-definition
 })
 export class ListassetsComponent implements OnInit {
 
+  searchTerm='';
+  page:number=1;
+  pageSize=5;
+
   constructor(public assetService: AssetDefinitionService,
     private router:Router) { }
 
