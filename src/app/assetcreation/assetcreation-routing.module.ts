@@ -10,6 +10,7 @@ import { OrderEditComponent } from './order-edit/order-edit.component';
 import {HomeComponent} from './home/home.component'
 
 
+
 const routes: Routes = [
   {path:'list',component:AssetcreationListComponent},
   {path:'edit/:id',component:AssetcreationEditComponent},
@@ -17,7 +18,7 @@ const routes: Routes = [
   {path:'delete',component:AssetcreationDeleteComponent},
   {path:'orders',component:OrderListComponent},
   {path:'orderedit/:id',component:OrderEditComponent},
-  {path:'home',component:HomeComponent}
+  {path:'home',component:HomeComponent},
 
 ];
 
