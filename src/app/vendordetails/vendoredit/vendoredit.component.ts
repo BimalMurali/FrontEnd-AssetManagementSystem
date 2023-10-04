@@ -14,7 +14,7 @@ export class VendoreditComponent implements OnInit {
     private router: Router) { }
 
   ngOnInit(): void {
-    console.log(this.vendordetailsService.getAllVendors());
+    this.vendordetailsService.getAllVendors();
     this.vendordetailsService.getAllVendors();
   }
   //insert
