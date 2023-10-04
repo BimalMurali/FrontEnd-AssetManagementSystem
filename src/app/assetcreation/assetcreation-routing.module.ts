@@ -11,6 +11,7 @@ import {HomeComponent} from './home/home.component'
 import { AuthGuard } from '../auth/auth.guard';
 
 
+
 const routes: Routes = [
   {path:'list',component:AssetcreationListComponent,canActivate:[AuthGuard],data:{role:'4'}},
   {path:'edit/:id',component:AssetcreationEditComponent,canActivate:[AuthGuard],data:{role:'4'}},
@@ -19,7 +20,6 @@ const routes: Routes = [
   {path:'orders',component:OrderListComponent,canActivate:[AuthGuard],data:{role:'4'}},
   {path:'orderedit/:id',component:OrderEditComponent,canActivate:[AuthGuard],data:{role:'4'}},
   {path:'home',component:HomeComponent,canActivate:[AuthGuard],data:{role:'4'}}
-
 ];
 
 @NgModule({

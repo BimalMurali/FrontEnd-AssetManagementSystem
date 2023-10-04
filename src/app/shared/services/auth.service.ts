@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Router } from '@angular/router';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -17,6 +18,7 @@ export class AuthService {
     // call the webAPI for checking username and password
     return this.httpClient.get<User>(environment.apiUrl+'/api/users/'+user.userName+'/'+user.password)
   }
+ 
 
  
 
