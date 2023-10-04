@@ -4,6 +4,7 @@ import { environment } from 'src/environments/environment';
 import { Vendors } from '../models/vendors';
 import { Observable } from 'rxjs';
 import { Assetdefinition } from '../models/assetdefinition';
+import { Assettype } from '../models/assettype';
 
 
 @Injectable({
@@ -12,7 +13,9 @@ import { Assetdefinition } from '../models/assetdefinition';
 export class VendordetailsService {
 
   // list of asset definitions
-  assetdefinition: Assetdefinition[];
+  //assetdefinition: Assetdefinition[];
+
+  assettype: Assettype[];
   //form
   formVendorData: Vendors = new Vendors();
 
@@ -29,17 +32,18 @@ export class VendordetailsService {
       .then(response => {
         console.log(response);
         this.vendors = response as Vendors[];
+        console.log(this.vendors);
       },
         error => {
           console.log(error);
         });
   }
   getAllAssetsDef(): void {
-    this.httpClient.get(environment.apiUrl + '/api/assets')
+    this.httpClient.get(environment.apiUrl + '/api/assettypeid')
       .toPromise()
       .then(response => {
         console.log(response);
-        this.assetdefinition = response as Assetdefinition[];
+        this.assettype = response as Assettype[];
       },
         error => {
           console.log(error);
@@ -47,11 +51,14 @@ export class VendordetailsService {
   }
   // insert
   insertVendordetails(vendors: Vendors): Observable<any> {
-    return this.httpClient.post(environment.apiUrl + '/api/vendordetails', vendors)
+    return this.httpClient.post(environment.apiUrl + '/api/vendors', vendors)
   }
   //update vendor details
   updateVendor(vendors: Vendors): Observable<any> {
-    return this.httpClient.put(environment.apiUrl + '/api/vendordetails', vendors);
+    console.log("hiii reached ")
+    console.log(vendors);
+    console.log(vendors.type);
+    return this.httpClient.put(environment.apiUrl + '/api/vendors', vendors);
   }
 }
 

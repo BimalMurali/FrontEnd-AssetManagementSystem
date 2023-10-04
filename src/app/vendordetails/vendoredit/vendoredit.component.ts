@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Vendors } from 'src/app/shared/models/vendors';
 import { VendordetailsService } from 'src/app/shared/services/vendordetails.service';
 
 @Component({
@@ -15,17 +16,22 @@ export class VendoreditComponent implements OnInit {
 
   ngOnInit(): void {
     this.vendordetailsService.getAllVendors();
-    this.vendordetailsService.getAllVendors();
+    this.vendordetailsService.getAllAssetsDef();
   }
   //insert
 
+  //update vendor 
+
+  
+
   //update
-  updateVendor(form: NgForm){
-    console.log("Editing...");
+  editVendor(form: NgForm){
+    console.log("Editing...@@@@@");
     this.vendordetailsService.updateVendor(form.value)
     .subscribe(
       (response)=>{
         console.log(response);
+
       },
       (error)=>{
         console.log(error);
@@ -33,11 +39,11 @@ export class VendoreditComponent implements OnInit {
     )
 
 }
-//submit form
-onSubmit(form?: NgForm){
-  console.log(form.value);
-  this.updateVendor(form);
-  form.reset();
-this.router.navigateByUrl('vendordetails/list');
-}
+  //submit form
+  onSubmit(form?: NgForm) {
+    console.log(form.value);
+    this.editVendor(form);
+    form.reset();
+    this.router.navigateByUrl('vendordetails/list');
+  }
 }

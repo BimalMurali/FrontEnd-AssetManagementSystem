@@ -6,7 +6,7 @@ export class Assetcreation {
     make:string='';
     modelId:number=0;
     serialNo:string='';
-    assetTypeId:number;
+    //assetTypeId:number;
     yearOfManufacture:string='';
     purchaseDate :Date;
     warrranty:string='';
