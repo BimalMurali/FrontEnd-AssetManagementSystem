@@ -15,14 +15,15 @@ export class AddassetsComponent implements OnInit {
 
   ngOnInit(): void {
   this.assetService.getAllAssets();
+  this.assetService.getAllAssetType();
   }
 
   // Insert
   addAssetDefinition(form:NgForm){
     console.log("Inserting");
     this.assetService.insertAsset(form.value).subscribe(
-      (response )=>{
-        console.log(response)
+      (response)=>{
+        console.log(response +"hiiii")
       },
       (error)=>{
         console.log(error)
@@ -33,7 +34,9 @@ export class AddassetsComponent implements OnInit {
 
   // submit form
   onSubmit(form : NgForm){
+    console.log("hii")
     console.log(form.value)
+    console.log("hello")
     // insert
     this.addAssetDefinition(form)
 

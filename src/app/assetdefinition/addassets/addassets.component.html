@@ -9,22 +9,15 @@
         
         <!-- assetDefinitonId -->
         <div class="form-group">
-            <label for="">Asset Definition id</label>
+            <!-- <label for="">Asset Definition id</label>
             <input type="text" name="id" #id="ngModel"
                 [(ngModel)]="assetService.formAssetDefinitionData.id" class="form-control"
                 placeholder="Enter Definition id" min="3" maxlength="25" required
-                [ngClass]="{'is-invalid':id.touched && id.invalid}">
-
-            <!-- Validation error message -->
-            <div class="validation-error" *ngIf="id.touched && id.invalid">
-                <div *ngIf="id.errors.required">
-                    assetDefinitionId is invalid or required
-
-                </div>
-
-            </div>
-
+                [ngClass]="{'is-invalid':id.touched && id.invalid}"> -->
+                <input type="hidden" readonly name="id" [(ngModel)]="assetService.formAssetDefinitionData.id">
         </div>
+
+            
 
         <!-- asset Name -->
         <div class="form-group">
@@ -46,37 +39,33 @@
         </div>
 
 
-         <!-- dropdown list for asset def -->
-         <!-- <div class="form-group">
+         <!-- dropdown list for asset def  -->
+         <div class="form-group">
             <label for="">Asset Type</label>
-            <select name="AssetTypeId" id="AssetTypeId" #AssetTypeId="ngModel" [(ngModel)]="assetService.formAssetDefinitionData.AssetTypeId" class="form-control" required>
+            <select name="assetTypeId" id="assetTypeId" #assetTypeId="ngModel" [(ngModel)]="assetService.formAssetDefinitionData.assetTypeId" class="form-control" required>
                 <option value=0 selected disabled>---Select Asset Type</option>
-                <option *ngFor="let dept of assetService.assettype" value="{{dept.assetTypeId}}">
-                    {{dept.assettype}}
+                <option *ngFor="let dept of assetService.assetTypes" value="{{dept.id}}">
+                    {{dept.assetType}}
                 </option>
             </select>
-        </div> -->
+        </div>
 
         
         <!-- Asset Definition Id -->
-
-        <!-- <div class="form-group">
+<!-- 
+        <div class="form-group">
             <label for="">Asset Type Id</label>
             <input type="text" name="assetTypeId" #modelId="ngModel"
-                [(ngModel)]="assetService.formAssetDefinitionData.AssetTypeId" class="form-control"
+                [(ngModel)]="assetService.formAssetDefinitionData.assettype" class="form-control"
                 placeholder="Enter assetTypeId" min="3" maxlength="25" required
                 [ngClass]="{'is-invalid':assetTypeId.touched && assetTypeId.invalid}"> -->
 
             <!-- Validation error message -->
-            <!-- <div class="validation-error" *ngIf="assetTypeId.touched && assetTypeId.invalid">
+             <!-- <div class="validation-error" *ngIf="assetTypeId.touched && assetTypeId.invalid">
                 <div *ngIf="assetTypeId.errors.required">
-                    modelId is invalid or required
-
-                </div>
-
+                    modelId is invalid or required</div>
             </div>
-
-        </div> -->
+        </div> --> 
 
         <!-- Category -->
         <div class="form-group">
@@ -98,23 +87,13 @@
         </div>
 
         
-
-
         <!-- Submit button -->
         <div class="form-group">
             <button type="submit" class="btn-lg btn-primary form-control"
-                [disabled]="!(form.valid && form.dirty)">INSERT
+                >INSERT
             </button>
 
         </div>
-
-
-
-
-
-
-
-
 
     </form>
 
