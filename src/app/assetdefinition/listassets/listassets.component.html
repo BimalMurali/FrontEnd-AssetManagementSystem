@@ -23,7 +23,7 @@
               <tr>
                 <th>ID</th>
                 <th>Asset Name</th>
-                <th>Asset Type ID</th>
+                <th>Asset Type </th>
                 <th>Category</th>
               </tr>
             </thead>
@@ -31,7 +31,7 @@
               <tr *ngFor="let AssetDefintion of assetService.assets | filter: searchTerm | paginate:{ itemsPerPage:pageSize,currentPage: page}">
                 <td>{{AssetDefintion.id}}</td>
                 <td>{{AssetDefintion.assetName}}</td>
-                <td>{{AssetDefintion.assetTypeId}}</td>
+                <td>{{ AssetDefintion?.assetType?.assetType }}</td>
                 <td>{{AssetDefintion.category}}</td>
 
                 <td><button type="button" class="btn btn-sm btn-outline-info"

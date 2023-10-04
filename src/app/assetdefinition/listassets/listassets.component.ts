@@ -22,6 +22,9 @@ export class ListassetsComponent implements OnInit {
     this.assetService.getAllAssets();
   }
 
+  
+  
+
   // update an asset creation
   updateAssetDefinition(assetdefinition:Assetdefinition){
     console.log(assetdefinition)
