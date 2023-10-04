@@ -8,12 +8,14 @@ import { AssetcreationEditComponent } from './assetcreation-edit/assetcreation-e
 import { AssetcreationAddComponent } from './assetcreation-add/assetcreation-add.component';
 import { AssetcreationDeleteComponent } from './assetcreation-delete/assetcreation-delete.component';
 import { FormsModule } from '@angular/forms';
+import { OrderListComponent } from './order-list/order-list.component';
+import { OrderEditComponent } from './order-edit/order-edit.component';
 
 
 
 
 @NgModule({
-  declarations: [AssetcreationComponent, AssetcreationListComponent, AssetcreationEditComponent, AssetcreationAddComponent, AssetcreationDeleteComponent],
+  declarations: [AssetcreationComponent, AssetcreationListComponent, AssetcreationEditComponent, AssetcreationAddComponent, AssetcreationDeleteComponent, OrderListComponent, OrderEditComponent],
   imports: [
     CommonModule,
     AssetcreationRoutingModule,
