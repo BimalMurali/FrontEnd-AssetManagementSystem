@@ -7,7 +7,7 @@
 
 
         <div class="form-group">
-            <input type="hidden" readonly name="id" [(ngModel)]="assetcreationservice.formAssetCreationData.id">
+            <input type="hidden" name="id" [(ngModel)]="assetcreationservice.formAssetCreationData.id">
         </div>
         
         <!-- assetCraetionId -->
@@ -18,8 +18,8 @@
                 placeholder="Enter Creation id" min="3" maxlength="25" required
                 [ngClass]="{'is-invalid':id.touched && id.invalid}">
 
-             Validation error message -->
-            <!-- <div class="validation-error" *ngIf="id.touched && id.invalid">
+             Validation error message
+            <div class="validation-error" *ngIf="id.touched && id.invalid">
                 <div *ngIf="id.errors.required">
                     assetCreationId is invalid or required
 
@@ -27,12 +27,12 @@
 
             </div>
 
-        </div> --> 
+        </div>  -->
 
         <!-- make -->
 
         <div class="form-group">
-            <label for="">Make</label>
+            <label for="">Enter Make name</label>
             <input type="text" name="make" #make="ngModel" [(ngModel)]="assetcreationservice.formAssetCreationData.make"
                 class="form-control" placeholder="Enter make name" min="3" maxlength="25" required
                 [ngClass]="{'is-invalid':make.touched && make.invalid}">

@@ -46,15 +46,17 @@ export class PurchaseordersService {
     this.httpClient.get(environment.apiUrl + '/api/purchaseorders')
       .toPromise()
       .then(response => {
+        console.log("hi")
         console.log(response);
         this.order = response as Purchaseorder[];
+
       },
         error => {
           console.log(error);
         });
   }
   getAllAssetsDef(): void {
-    this.httpClient.get(environment.apiUrl + '/api/assets')
+    this.httpClient.get(environment.apiUrl + '/api/assettype')
     .toPromise()
     .then(response =>{
       console.log(response);
@@ -87,6 +89,10 @@ export class PurchaseordersService {
 
   updatePurchaseOrder(purchaseorder:Purchaseorder):Observable<any>{
     return this.httpClient.put(environment.apiUrl+'/api/purchaseorders',purchaseorder);
+  }
+
+  disableOrder(id:number){
+    return this.httpClient.get(environment.apiUrl+'/api/purchaseorders/'+id);
   }
 
 }

@@ -86,7 +86,7 @@ getAllAssetsDef(): void {
   this.httpClient.get(environment.apiUrl + '/api/assettype')
   .toPromise()
   .then(response =>{
-    // console.log(response);
+    console.log(response);
     this.assetdefinition=response as Assetdefinition[];
   },
   error=>{

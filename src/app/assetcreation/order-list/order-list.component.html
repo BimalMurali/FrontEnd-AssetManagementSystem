@@ -27,6 +27,7 @@
             <td>{{p.deliveryDate|date:'dd-MM-yyyy'}}</td>
             <td>{{getAssetNameById(p.assetId)}}</td>
             <td>{{getVendorNameById(p.vendorId)}}</td>
+            <!-- <td>{{p.status.statusNames}}</td> -->
             <td>{{getStatusNameById(p.statusId)}}</td>
             <td><button type="button" class="btn btn-sm btn-outline-info"
               (click)="editPurchaseOrder(p)">

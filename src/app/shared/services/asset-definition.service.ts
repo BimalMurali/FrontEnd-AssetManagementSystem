@@ -29,7 +29,7 @@ export class AssetDefinitionService {
   getAllAssets(): void{
 
     //getting the data
-    this.httpClient.get(environment.apiUrl +'/api/assets')
+    this.httpClient.get(environment.apiUrl +'/api/assettype')
     .toPromise()
     .then(response=>{
       console.log(response);
@@ -68,7 +68,11 @@ export class AssetDefinitionService {
   }
 
   // update assset definition
-updateAssetDefinition(assetdefinition:Assetdefinition):Observable<any>{
+updateAssetDefinition  (assetdefinition:Assetdefinition):Observable<any>{
   return this.httpClient.put(environment.apiUrl + '/api/assets',assetdefinition)
+}
+
+disableAsset(id:number){
+  return this.httpClient.get(environment.apiUrl+'/api/asset/'+id);
 }
 }

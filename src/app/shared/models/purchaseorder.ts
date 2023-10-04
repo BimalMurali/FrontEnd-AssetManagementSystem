@@ -10,6 +10,7 @@ export class Purchaseorder {
     assetId:number;
     statusId:number;
     vendorId:number;
+    active:boolean=true;
     
     assetdef: Assetdefinition = new Assetdefinition();
     vendors: Vendors = new Vendors();
