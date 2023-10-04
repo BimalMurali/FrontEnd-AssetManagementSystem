@@ -98,6 +98,9 @@ getAllAssetsDef(): void {
 //   return this.httpClient.put(environment.apiUrl+'/api/purchaseorders',purchaseorder);
 // }
 
+disableOrder(id:number){
+  return this.httpClient.get(environment.apiUrl+'/api/deleteasset/'+id);
+}
 
 
 }

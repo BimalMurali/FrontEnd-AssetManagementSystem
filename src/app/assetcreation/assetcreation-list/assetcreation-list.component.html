@@ -22,7 +22,11 @@
             <th >To Date</th> 
             <th >AssestDefinition</th> 
             <th >Vendor Name</th> 
+            <th>Is Active</th>
+
             <th >Edit</th> 
+          
+
           </tr>
         </thead>
         <tbody>
@@ -39,11 +43,14 @@
             <!-- <td>{{v.assettype.assetName}}</td> -->
             <td>{{v.assetdef.assetName}}</td>
             <td>{{v.vendors.vendorName}}</td>
+            <td>{{v.active}}</td>
            
 
             <td><button type="button" class="btn btn-sm btn-outline-info"
               (click)="updateAssetCreation(v)">
               <i class="fa fa-edit"></i></button>&nbsp;
+              <button type="button" class="btn  btn-sm btn-danger" (click)="disableOrder(v.id)"><i
+                class="fa fa-trash"></i></button>
             
           </td> 
             
