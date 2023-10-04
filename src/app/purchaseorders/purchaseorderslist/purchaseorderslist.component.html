@@ -15,7 +15,7 @@
             <td>{{p.id}}</td>
             <td>{{p.orderDate|date:'dd-MM-yyyy'}}</td>
             <td>{{p.deliveryDate|date:'dd-MM-yyyy'}}</td>
-            <td>{{p.vendorId}}</td>
+            <td>{{getVendorNameById(p.vendorId)}}</td>
             <td>{{p.assetId}}</td>
             <td>{{p.statusId}}</td>
             <td><button type="button" class="btn btn-sm btn-outline-info"

@@ -19,6 +19,11 @@ export class PurchaseorderslistComponent implements OnInit {
     this.purchaseorderservice.getAllVendors();
   }
 
+  getVendorNameById(vendorId: number): string {
+    const vendor = this.purchaseorderservice.vendors.find(vendor => vendor.id === vendorId);
+    return vendor ? vendor.vendorName : '';
+  }
+
   //update
   editPurchaseOrder(purchaseorder:Purchaseorder){
     console.log(purchaseorder);
