@@ -60,5 +60,10 @@ export class VendordetailsService {
     console.log(vendors.type);
     return this.httpClient.put(environment.apiUrl + '/api/vendors', vendors);
   }
+
+  disableOrder(id:number){
+    return this.httpClient.get(environment.apiUrl+'/api/vendors/'+id);
+  }
+
 }
 
