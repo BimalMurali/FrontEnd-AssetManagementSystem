@@ -1,19 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import {PurchaseordersService} from '../../shared/services/purchaseorders.service';
 import { Purchaseorder } from 'src/app/shared/models/purchaseorder';
+import { PurchaseordersService } from 'src/app/shared/services/purchaseorders.service';
 
 @Component({
-  selector: 'app-purchaseorderslist',
-  templateUrl: './purchaseorderslist.component.html',
-  styleUrls: ['./purchaseorderslist.component.scss']
+  selector: 'app-order-list',
+  templateUrl: './order-list.component.html',
+  styleUrls: ['./order-list.component.scss']
 })
-export class PurchaseorderslistComponent implements OnInit {
-
-  searchTerm=' ';
-  page:number=1;
-  pageSize:number=5;
- 
+export class OrderListComponent implements OnInit {
 
   constructor(public purchaseorderservice:PurchaseordersService,private router:Router) { }
 
@@ -33,12 +28,11 @@ export class PurchaseorderslistComponent implements OnInit {
   editPurchaseOrder(purchaseorder:Purchaseorder){
     console.log(purchaseorder);
     console.log(this.populatedOrdersData(purchaseorder));
-    this.router.navigate(['purchaseorders/edit',purchaseorder.id]);
+    this.router.navigate(['assetcreation/orderedit',purchaseorder.id]);
 
   }
 
   populatedOrdersData(purchaseorder:Purchaseorder){
     this.purchaseorderservice.formPurchaseOrderData=Object.assign({},purchaseorder)
   }
-
 }

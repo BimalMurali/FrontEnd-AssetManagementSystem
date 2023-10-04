@@ -8,6 +8,8 @@ import { PurchaseordersaddComponent } from './purchaseordersadd/purchaseordersad
 import { PurchaseorderseditComponent } from './purchaseordersedit/purchaseordersedit.component';
 import { PurchaseordersdeleteComponent } from './purchaseordersdelete/purchaseordersdelete.component';
 import { FormsModule } from '@angular/forms';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 
 @NgModule({
@@ -15,7 +17,9 @@ import { FormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     PurchaseordersRoutingModule,
-    FormsModule
+    FormsModule,
+    Ng2SearchPipeModule,
+    NgxPaginationModule
   ]
 })
 export class PurchaseordersModule { }

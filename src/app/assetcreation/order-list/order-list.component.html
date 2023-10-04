@@ -1,14 +1,4 @@
-<div class="container">
-  <br>
-  <div class="header">
-    <div class="row">
-      <div class="col-sm-8 custom margin-search">
-        <input type="search" class="form-control" placeholder="Search text here ..."
-        [(ngModel)]="searchTerm">
-      </div>
-    </div>
-  </div>
-  <br>
+<div class="conatiner">
     <table class="table table-striped table-bordered">
         <thead>
           <tr>
@@ -21,7 +11,7 @@
           </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let p of purchaseorderservice.order|filter:searchTerm|paginate :{itemsPerPage:pageSize,currentPage:page}">
+            <tr *ngFor="let p of purchaseorderservice.order">
             <td>{{p.id}}</td>
             <td>{{p.orderDate|date:'dd-MM-yyyy'}}</td>
             <td>{{p.deliveryDate|date:'dd-MM-yyyy'}}</td>
@@ -35,8 +25,6 @@
           </tr>
         </tbody>
       </table>
-      <div class="footer">
-        <pagination-controls (pageChange)="page = $event" class="custom-page"></pagination-controls>
-      </div>
+      
 </div>  
 <router-outlet></router-outlet>
