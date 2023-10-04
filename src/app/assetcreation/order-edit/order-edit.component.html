@@ -71,12 +71,17 @@
         </div>
 
         <!--Status -->
-         <!--Status -->
          <div class="form-group">
-            <label for="">Status</label>
-            <br>
-            <input type="text"class="form-control" value="1. PO RAISED WITH SUPPLIER">
+            <label for="">update status</label>
+            <select name="statusId" id="statusId" #statusId="ngModel" [(ngModel)]="purchaseorderservice.formPurchaseOrderData.statusId" class="form-control"  required>
+                <option value=0 selected disabled>---Select status</option>
+                <option *ngFor="let dept of purchaseorderservice.status" value="{{dept.statusId}}">
+                    {{dept.statusNames}}
+                </option>
+            </select>
         </div>
+
+
         
           <!-- Submit button -->
           <div class="form-group">
