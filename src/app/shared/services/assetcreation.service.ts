@@ -100,6 +100,7 @@ getAllAssetsDef(): void {
 
 disableOrder(id:number){
   return this.httpClient.get(environment.apiUrl+'/api/deleteasset/'+id);
+  
 }
 
 
