@@ -9,7 +9,7 @@ export class Vendors {
     validFrom: Date;
     validTo: Date;
     address:string='';
-    active:boolean=false;
+    active:boolean=true;
     
 
     //Object oriented model

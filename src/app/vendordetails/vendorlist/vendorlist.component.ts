@@ -9,6 +9,10 @@ import { VendordetailsService } from 'src/app/shared/services/vendordetails.serv
 })
 export class VendorlistComponent implements OnInit {
 
+  searchTerm='';
+  page: number=1;
+  pageSize=5;
+
   constructor(public vendordetailsService: VendordetailsService,
     private router: Router) { }
 

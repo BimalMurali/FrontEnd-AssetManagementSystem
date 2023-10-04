@@ -8,6 +8,9 @@ import { VendoreditComponent } from './vendoredit/vendoredit.component';
 import { VendoraddComponent } from './vendoradd/vendoradd.component';
 import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { NgxPaginationModule } from 'ngx-pagination';
+
 
 
 @NgModule({
@@ -15,7 +18,9 @@ import { HomeComponent } from './home/home.component';
   imports: [
     CommonModule,
     VendordetailsRoutingModule,
-    FormsModule
+    FormsModule,
+    Ng2SearchPipeModule,
+    NgxPaginationModule
   ]
 })
 export class VendordetailsModule { }
