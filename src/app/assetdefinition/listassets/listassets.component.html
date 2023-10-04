@@ -25,6 +25,7 @@
                 <th>Asset Name</th>
                 <th>Asset Type </th>
                 <th>Category</th>
+                <th>Is Active</th>
               </tr>
             </thead>
             <tbody>
@@ -33,13 +34,13 @@
                 <td>{{AssetDefintion.assetName}}</td>
                 <td>{{ AssetDefintion?.assetType?.assetType }}</td>
                 <td>{{AssetDefintion.category}}</td>
+                <td>{{AssetDefintion.active}}</td>
 
                 <td><button type="button" class="btn btn-sm btn-outline-info"
                   (click)="updateAssetDefinition(AssetDefintion)">
                   <i class="fa fa-edit"></i></button>&nbsp;
-                  <button type="button" class="btn  btn-sm btn-danger" (click)="disableAsset(a.id)"><i
+                  <button type="button" class="btn  btn-sm btn-danger" (click)="disableAsset(AssetDefintion.id)"><i
                     class="fa fa-trash"></i></button>
-                
               </tr>
             </tbody>
           </table>
