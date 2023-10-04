@@ -14,6 +14,8 @@ export class PurchaseordersaddComponent implements OnInit {
 
   ngOnInit(): void {
     this.purchaseorderservice.getAllOrder();
+    this.purchaseorderservice.getAllVendors();
+    this.purchaseorderservice.getAllAssetsDef();
   }
 
   addOrder(form:NgForm){

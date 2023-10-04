@@ -1,3 +1,121 @@
-<h1>addassets works</h1>
-<router-outlet></router-outlet>
 
+<div class="container">
+    <h3>New Assset Definition</h3>
+    <hr>
+    <!-- Template driven from style -->
+    <form name="frmAssetDefinition" #form="ngForm" autocomplete="off" (ngSubmit)="onSubmit(form)">
+
+
+        
+        <!-- assetDefinitonId -->
+        <div class="form-group">
+            <label for="">Asset Definition id</label>
+            <input type="text" name="id" #id="ngModel"
+                [(ngModel)]="assetService.formAssetDefinitionData.id" class="form-control"
+                placeholder="Enter Definition id" min="3" maxlength="25" required
+                [ngClass]="{'is-invalid':id.touched && id.invalid}">
+
+            <!-- Validation error message -->
+            <div class="validation-error" *ngIf="id.touched && id.invalid">
+                <div *ngIf="id.errors.required">
+                    assetDefinitionId is invalid or required
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- asset Name -->
+        <div class="form-group">
+            <label for="">Asset Name</label>
+            <input type="text" name="assetName" #assetName="ngModel"
+                [(ngModel)]="assetService.formAssetDefinitionData.assetName" class="form-control"
+                placeholder="Enter asset Name" min="3" maxlength="25" required
+                [ngClass]="{'is-invalid':assetName.touched && assetName.invalid}">
+
+            <!-- Validation error message -->
+            <div class="validation-error" *ngIf="assetName.touched && assetName.invalid">
+                <div *ngIf="assetName.errors.required">
+                    asset name is invalid or required
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+         <!-- dropdown list for asset def -->
+         <!-- <div class="form-group">
+            <label for="">Asset Type</label>
+            <select name="AssetTypeId" id="AssetTypeId" #AssetTypeId="ngModel" [(ngModel)]="assetService.formAssetDefinitionData.AssetTypeId" class="form-control" required>
+                <option value=0 selected disabled>---Select Asset Type</option>
+                <option *ngFor="let dept of assetService.assettype" value="{{dept.assetTypeId}}">
+                    {{dept.assettype}}
+                </option>
+            </select>
+        </div> -->
+
+        
+        <!-- Asset Definition Id -->
+
+        <!-- <div class="form-group">
+            <label for="">Asset Type Id</label>
+            <input type="text" name="assetTypeId" #modelId="ngModel"
+                [(ngModel)]="assetService.formAssetDefinitionData.AssetTypeId" class="form-control"
+                placeholder="Enter assetTypeId" min="3" maxlength="25" required
+                [ngClass]="{'is-invalid':assetTypeId.touched && assetTypeId.invalid}"> -->
+
+            <!-- Validation error message -->
+            <!-- <div class="validation-error" *ngIf="assetTypeId.touched && assetTypeId.invalid">
+                <div *ngIf="assetTypeId.errors.required">
+                    modelId is invalid or required
+
+                </div>
+
+            </div>
+
+        </div> -->
+
+        <!-- Category -->
+        <div class="form-group">
+            <label for="">Category</label>
+            <input type="text" name="category" #category="ngModel"
+                [(ngModel)]="assetService.formAssetDefinitionData.category" class="form-control"
+                placeholder="Enter category" min="3" maxlength="25" required
+                [ngClass]="{'is-invalid':category.touched && category.invalid}">
+
+            <!-- Validation error message -->
+            <div class="validation-error" *ngIf="category.touched && category.invalid">
+                <div *ngIf="category.errors.required">
+                    category is invalid or required
+
+                </div>
+
+            </div>
+
+        </div>
+
+        
+
+
+        <!-- Submit button -->
+        <div class="form-group">
+            <button type="submit" class="btn-lg btn-primary form-control"
+                [disabled]="!(form.valid && form.dirty)">INSERT
+            </button>
+
+        </div>
+
+
+
+
+
+
+
+
+
+    </form>
+
+</div>
