@@ -12,12 +12,13 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { OrderListComponent } from './order-list/order-list.component';
 import { OrderEditComponent } from './order-edit/order-edit.component';
+import { HomeComponent } from './home/home.component';
 
 
 
 
 @NgModule({
-  declarations: [AssetcreationComponent, AssetcreationListComponent, AssetcreationEditComponent, AssetcreationAddComponent, AssetcreationDeleteComponent, OrderListComponent, OrderEditComponent],
+  declarations: [AssetcreationComponent, AssetcreationListComponent, AssetcreationEditComponent, AssetcreationAddComponent, AssetcreationDeleteComponent, OrderListComponent, OrderEditComponent, HomeComponent],
   imports: [
     CommonModule,
     AssetcreationRoutingModule,

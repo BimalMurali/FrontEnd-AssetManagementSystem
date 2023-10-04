@@ -7,6 +7,8 @@ import { AssetcreationDeleteComponent } from './assetcreation-delete/assetcreati
 import { PurchaseorderslistComponent } from '../purchaseorders/purchaseorderslist/purchaseorderslist.component';
 import { OrderListComponent } from './order-list/order-list.component';
 import { OrderEditComponent } from './order-edit/order-edit.component';
+import {HomeComponent} from './home/home.component'
+
 
 const routes: Routes = [
   {path:'list',component:AssetcreationListComponent},
@@ -14,7 +16,8 @@ const routes: Routes = [
   {path:'add',component:AssetcreationAddComponent},
   {path:'delete',component:AssetcreationDeleteComponent},
   {path:'orders',component:OrderListComponent},
-  {path:'orderedit/:id',component:OrderEditComponent}
+  {path:'orderedit/:id',component:OrderEditComponent},
+  {path:'home',component:HomeComponent}
 
 ];
 

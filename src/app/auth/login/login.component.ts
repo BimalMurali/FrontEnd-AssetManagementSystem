@@ -94,7 +94,7 @@ export class LoginComponent implements OnInit {
             sessionStorage.setItem("USER_NAME", response.data.Username);
             localStorage.setItem("ROLE", response.data.role);
             localStorage.setItem("JWT_UTIL", response.data.ACCESSTOKEN);
-            this.router.navigate(["/assetcreation"]);
+            this.router.navigate(["/assetcreation/home"]);
 
           }
 
