@@ -29,10 +29,10 @@ export class PurchaseorderslistComponent implements OnInit {
     return vendor ? vendor.vendorName : '';
   }
 
-  getAssetNameById(assetId: number): string {
-    const asset = this.purchaseorderservice.assetdefinition.find(asset => asset.id === assetId);
-    return asset ? asset.assetName : '';
-  }
+  // getAssetNameById(assetId: number): string {
+  //   const asset = this.purchaseorderservice.assetdefinition.find(asset => asset.id === assetId);
+  //   return asset ? asset.assetName : '';
+  // }
 
   getStatusNameById(statusId:number):string{
     const status = this.purchaseorderservice.status.find(status => status.statusId === statusId);
@@ -49,6 +49,24 @@ export class PurchaseorderslistComponent implements OnInit {
 
   populatedOrdersData(purchaseorder:Purchaseorder){
     this.purchaseorderservice.formPurchaseOrderData=Object.assign({},purchaseorder)
+  }
+
+  disableOrder(_id:number){
+    if(confirm("Do you want to delete this record?")){
+      this.purchaseorderservice.disableOrder(_id)
+      .subscribe(
+        (response)=>{
+          console.log(response);
+          this.purchaseorderservice.getAllOrder();
+        },
+        (error)=>{
+        console.log(error);
+      }
+      )
+    }
+
+
+    
   }
 
 }

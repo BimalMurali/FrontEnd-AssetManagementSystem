@@ -91,4 +91,8 @@ export class PurchaseordersService {
     return this.httpClient.put(environment.apiUrl+'/api/purchaseorders',purchaseorder);
   }
 
+  disableOrder(id:number){
+    return this.httpClient.get(environment.apiUrl+'/api/purchaseorders/'+id);
+  }
+
 }
