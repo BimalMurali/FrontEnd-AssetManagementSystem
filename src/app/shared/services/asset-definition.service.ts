@@ -9,17 +9,18 @@ import { Assetdefinition } from '../models/assetdefinition';
   providedIn: 'root'
 })
 export class AssetDefinitionService {
+  
 
   //declare variables--global variable
   // formEmployeeData: Asset=new Asset();
 
-  //list of employees
+  //list of assets
   assets: Assetdefinition[];
 
   // form
   formAssetDefinitionData:Assetdefinition=new Assetdefinition();
 
-  //list of departments
+  //list of asset types
   assetTypes:Assettype[];
 
   constructor(private httpClient: HttpClient) { } // DI -CI
@@ -59,9 +60,15 @@ export class AssetDefinitionService {
     });
   }
 
+  //insert asset definition
   insertAsset(assets: Assetdefinition): Observable<any>{
     console.log(assets.assetTypeId);
     console.log(assets.assetName);
     return this.httpClient.post(environment.apiUrl +'/api/assets',assets);
   }
+
+  // update assset definition
+updateAssetDefinition(assetdefinition:Assetdefinition):Observable<any>{
+  return this.httpClient.put(environment.apiUrl + '/api/assets',assetdefinition)
+}
 }

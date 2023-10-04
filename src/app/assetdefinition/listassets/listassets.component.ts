@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Assetdefinition } from 'src/app/shared/models/assetdefinition';
 import { AssetDefinitionService } from 'src/app/shared/services/asset-definition.service';
 
 
@@ -15,6 +16,20 @@ export class ListassetsComponent implements OnInit {
 
   ngOnInit(): void {
     this.assetService.getAllAssets();
+  }
+
+  // update an asset creation
+  updateAssetDefinition(assetdefinition:Assetdefinition){
+    console.log(assetdefinition)
+    console.log(this.populatedEmployeeData(assetdefinition))
+    this.router.navigate(['assetdefinition/edit',assetdefinition.id])
+    // Localhost:4200/employees/id
+
+  }
+
+   // Getting employee data
+   populatedEmployeeData(assetdefinition:Assetdefinition){
+    this.assetService.formAssetDefinitionData=Object.assign({},assetdefinition);
   }
 
   

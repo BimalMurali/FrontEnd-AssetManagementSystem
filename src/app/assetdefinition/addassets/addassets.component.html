@@ -90,7 +90,7 @@
         <!-- Submit button -->
         <div class="form-group">
             <button type="submit" class="btn-lg btn-primary form-control"
-                >INSERT
+            [disabled]="!(form.valid && form.dirty)">INSERT
             </button>
 
         </div>
