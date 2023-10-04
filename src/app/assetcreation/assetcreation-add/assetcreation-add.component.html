@@ -51,7 +51,7 @@
          <!-- dropdown list for asset def -->
          <div class="form-group">
             <label for="">Asset Definition</label>
-            <select name="modelId" id="modelId" #modelId="ngModel" [(ngModel)]="assetcreationservice.formAssetCreationData.modelId" class="form-control" required>
+            <select name="modelId" id="modelId" #modelId="ngModel" [(ngModel)]="assetcreationservice.formAssetCreationData.modelId" class="form-control"  required>
                 <option value=0 selected disabled>---Select Asset Definition</option>
                 <option *ngFor="let dept of assetcreationservice.assetdefinition" value="{{dept.id}}">
                     {{dept.assetName}}
