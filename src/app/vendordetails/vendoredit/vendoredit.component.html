@@ -78,12 +78,12 @@
             </div>
 
         </div>
-        <!--Valid To-->
+        <!--Valid From-->
         <div class="form-group">
             <label>validFrom</label>
             <input type="date" name="validFrom" #validFrom="ngModel"
                 [(ngModel)]="vendordetailsService.formVendorData.validFrom" class="form-control"
-                placeholder="Enter EDate" minlength="3" maxlength="25" required
+                placeholder="Enter validFrom" minlength="3" maxlength="25" required
                 [ngClass]="{'is-invalid': validFrom.touched && validFrom.invalid}" />
             <!--Validation Error Message-->
             <div class="validation-error" *ngIf="validFrom.touched && validFrom.invalid">
