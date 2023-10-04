@@ -4,23 +4,24 @@ import { VendorlistComponent } from './vendorlist/vendorlist.component';
 import { VendoreditComponent } from './vendoredit/vendoredit.component';
 import { VendoraddComponent } from './vendoradd/vendoradd.component';
 import {HomeComponent} from './home/home.component'
+import { AuthGuard } from '../auth/auth.guard';
 
 const routes: Routes = [
   {
     path: 'list',
-    component: VendorlistComponent
+    component: VendorlistComponent,canActivate:[AuthGuard],data:{role:'2'}
   },
   {
     path: 'edit/:id',
-    component: VendoreditComponent
+    component: VendoreditComponent,canActivate:[AuthGuard],data:{role:'2'}
   },
   {
     path: 'add',
-    component: VendoraddComponent
+    component: VendoraddComponent,canActivate:[AuthGuard],data:{role:'2'}
   },
   {
     path:'home',
-    component:HomeComponent
+    component:HomeComponent,canActivate:[AuthGuard],data:{role:'2'}
   }
 ];
 

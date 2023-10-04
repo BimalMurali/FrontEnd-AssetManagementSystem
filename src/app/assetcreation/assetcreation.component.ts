@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AssetcreationService } from '../shared/services/assetcreation.service';
 
 @Component({
   selector: 'app-assetcreation',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AssetcreationComponent implements OnInit {
 
-  constructor() { }
+  constructor(private assetcreationservice:AssetcreationService) { }
 
   ngOnInit(): void {
+  }
+
+  logOut(){
+    console.log("Log out");
+    this.assetcreationservice.logOut();
   }
 
 }

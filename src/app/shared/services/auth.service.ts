@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { User } from '../models/users';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { Router } from '@angular/router';
 
 
 @Injectable({
@@ -10,7 +11,7 @@ import { environment } from 'src/environments/environment';
 })
 export class AuthService {
 
-  constructor(private httpClient:HttpClient) { }
+  constructor(private httpClient:HttpClient,private router:Router) { }
 
   // Verify login userName and Password
   public loginVerify(user:User){
@@ -18,4 +19,7 @@ export class AuthService {
     return this.httpClient.get<User>(environment.apiUrl+'/api/users/'+user.userName+'/'+user.password)
   }
  
+
+ 
+
 }

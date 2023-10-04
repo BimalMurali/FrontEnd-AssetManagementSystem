@@ -7,6 +7,7 @@ import { Vendors } from '../models/vendors';
 import { Assetdefinition } from '../models/assetdefinition';
 
 import { Status } from '../models/status';
+import { Router } from '@angular/router';
 
 
 @Injectable({
@@ -28,7 +29,7 @@ export class PurchaseordersService {
   status:Status[];
 
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient,private router:Router) { }
 
   getAllStatus():void{
     this.httpClient.get(environment.apiUrl + '/api/status')
@@ -93,6 +94,16 @@ export class PurchaseordersService {
 
   disableOrder(id:number){
     return this.httpClient.get(environment.apiUrl+'/api/purchaseorders/'+id);
+  }
+
+  public logOut() {
+    //clear all local and session storage keys
+    localStorage.removeItem("USER_NAME");
+    sessionStorage.removeItem("USER_NAME");
+    localStorage.removeItem("ROLE");
+    localStorage.removeItem("JWT_UTIL");
+  
+    this.router.navigate(['home'])
   }
 
 }

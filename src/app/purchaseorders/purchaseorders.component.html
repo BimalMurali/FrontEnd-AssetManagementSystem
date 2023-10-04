@@ -13,11 +13,6 @@
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link custom h4" [routerLink]="['/purchaseorders/delete']">
-          <i class="fa fa-trash" aria-hidden="true"></i> Delete <!-- FontAwesome icon for edit -->
-        </a>
-      </li>
-      <li class="nav-item">
         <a class="nav-link custom h4" [routerLink]="['/purchaseorders/list']">
           <i class="fa fa-list" aria-hidden="true"></i> List <!-- FontAwesome icon for list -->
         </a>
@@ -28,7 +23,7 @@
     <ul class="navbar-nav ml-auto border border-dark p-2 h4">
       <li class="nav-item">
         <a class="nav-link" [routerLink]="['/home']">
-          <i class="fa fa-sign-out" aria-hidden="true">Log Out</i>
+          <i class="fa fa-sign-out" aria-hidden="true" (click)="logOut()">Log Out</i>
         </a>
       </li>
     </ul>
