@@ -10,6 +10,10 @@ import { PurchaseordersService } from 'src/app/shared/services/purchaseorders.se
 })
 export class OrderListComponent implements OnInit {
 
+  searchTerm=' ';
+  page:number=1;
+  pageSize:number=5;
+
   constructor(public purchaseorderservice:PurchaseordersService,private router:Router) { }
 
   ngOnInit(): void {
@@ -22,6 +26,16 @@ export class OrderListComponent implements OnInit {
   getVendorNameById(vendorId: number): string {
     const vendor = this.purchaseorderservice.vendors.find(vendor => vendor.id === vendorId);
     return vendor ? vendor.vendorName : '';
+  }
+
+  getAssetNameById(assetId: number): string {
+    const asset = this.purchaseorderservice.assetdefinition.find(asset => asset.id === assetId);
+    return asset ? asset.assetName : '';
+  }
+
+  getStatusNameById(statusId:number):string{
+    const status = this.purchaseorderservice.status.find(status => status.statusId === statusId);
+    return status ? status.statusNames : '';
   }
 
   //update
