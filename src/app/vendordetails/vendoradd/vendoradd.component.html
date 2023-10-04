@@ -1,6 +1,5 @@
-
 <div class="container">
-    <h3>Vendor Edit</h3>
+    <h3>New Vendor Addition</h3>
     <hr>
     <!-- Template driven from style -->
     <form name="frmVendorAdd" #form="ngForm" autocomplete="off" (ngSubmit)="onSubmit(form)">
@@ -129,10 +128,8 @@
         <div class="form-group">
             <button type="submit" 
             class="btn btn-lg btn-primary form-control"
-            [disabled]="!(form.valid && form.dirty)" >UPDATE</button>
+            [disabled]="!(form.valid && form.dirty)" >INSERT</button>
         </div>
         
     </form>
     </div>
-
-

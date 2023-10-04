@@ -47,9 +47,10 @@ export class AssetDefinitionService {
   getAllAssetType(): void{
 
     //getting the data
-    this.httpClient.get(environment.apiUrl +'/api/assetTypes')
+    this.httpClient.get(environment.apiUrl +'/api/assettypeid')
     .toPromise()
     .then(response=>{
+      console.log("testing")
       console.log(response);
       this.assetTypes=response as Assettype[];
     },
@@ -59,6 +60,8 @@ export class AssetDefinitionService {
   }
 
   insertAsset(assets: Assetdefinition): Observable<any>{
+    console.log(assets.assetTypeId);
+    console.log(assets.assetName);
     return this.httpClient.post(environment.apiUrl +'/api/assets',assets);
   }
 }
