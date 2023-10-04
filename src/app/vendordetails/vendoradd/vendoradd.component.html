@@ -10,7 +10,7 @@
         <div class="form-group">
             <!-- <label for="">Vendor Id</label> -->
             <input type="hidden" readonly name="id" #id="ngModel" [(ngModel)]="vendordetailsService.formVendorData.id">
-                <!-- class="form-control" placeholder="Enter Vendor id" min="3" maxlength="25" required 
+            <!-- class="form-control" placeholder="Enter Vendor id" min="3" maxlength="25" required 
                 [ngClass]="{'is-invalid':id.touched && id.invalid}"> -->
 
             <!-- Validation error message -->
@@ -31,7 +31,7 @@
             </label>
             <select name="vendorName" id="vendorName" #vendorName="ngModel"
                 [(ngModel)]="vendordetailsService.formVendorData.vendorName" class="form-control">
-                <option value=0 selected disabled>---Select departmemnt---</option>
+                <option value=0 selected disabled>---Select VendorName---</option>
                 <option *ngFor="let vendorname of vendordetailsService.vendors" value="{{vendorname.vendorName}}">
                     {{vendorname.vendorName}}
                 </option>
@@ -43,16 +43,16 @@
                 Type:
 
             </label>
-            <input type="text" readonly id="type" #type="ngModel" value="supplier" 
-            [(ngModel)]="vendordetailsService.formVendorData.type" class="form-control">
+            <input type="text" readonly id="type" #type="ngModel" value="supplier"
+                [(ngModel)]="vendordetailsService.formVendorData.type" class="form-control">
         </div>
         <!-- dropdown list for asset def -->
         <div class="form-group">
-            <label for="">Asset Definition</label>
+            <label for="">Asset Type</label>
             <select name="assettypeid" id="assettypeid" #assettypeid="ngModel"
                 [(ngModel)]="vendordetailsService.formVendorData.assettypeid" class="form-control" required>
-                <option value=0 selected disabled>---Select Asset Definition</option>
-                <option *ngFor="let dept of vendordetailsService.assetdefinition" value="{{dept.id}}">
+                <option value=0 selected disabled>---Select Asset Type</option>
+                <option *ngFor="let dept of vendordetailsService.assettype" value="{{dept.id}}">
                     {{dept.assetName}}
                 </option>
             </select>
@@ -62,7 +62,7 @@
         <!-- Asset Definition Id -->
 
         <div class="form-group">
-            <label for="">Asset Definiton Id</label>
+            <label for="">Asset Type Id</label>
             <input type="text" name="assettypeid" #assettypeid="ngModel"
                 [(ngModel)]="vendordetailsService.formVendorData.assettypeid" class="form-control"
                 placeholder="Enter AssetTypeId" min="3" maxlength="25" required
@@ -78,7 +78,7 @@
             </div>
 
         </div>
-        <!--Valid To-->
+        <!--Valid From-->
         <div class="form-group">
             <label>Valid From</label>
             <input type="date" name="validFrom" #validFrom="ngModel"
@@ -111,8 +111,9 @@
         <!-- Address -->
         <div class="form-group">
             <label for="">Address</label>
-            <input type="text" name="address" #address="ngModel" [(ngModel)]="vendordetailsService.formVendorData.address"
-                class="form-control" placeholder="Enter Address" min="3" maxlength="25" required
+            <input type="text" name="address" #address="ngModel"
+                [(ngModel)]="vendordetailsService.formVendorData.address" class="form-control"
+                placeholder="Enter Address" min="3" maxlength="25" required
                 [ngClass]="{'is-invalid':address.touched && address.invalid}">
 
             <!-- Validation error message -->
@@ -125,12 +126,24 @@
             </div>
 
         </div>
+        <!--Is Active-->
+
+
+        <div class="form-group">
+            <div class="form-check">
+                <input type="checkbox" name="active" #active="ngModel"
+                    [(ngModel)]="vendordetailsService.formVendorData.active"
+                    class="form-check-input custom-checkbox" />
+                <label class="form-check-label">Is Active</label>
+            </div>
+        </div>
+        <br>
+
         <!--Submit-->
         <div class="form-group">
-            <button type="submit" 
-            class="btn btn-lg btn-primary form-control"
-            [disabled]="!(form.valid && form.dirty)" >INSERT</button>
+            <button type="submit" class="btn btn-lg btn-primary form-control"
+                [disabled]="!(form.valid && form.dirty)">INSERT</button>
         </div>
-        
+
     </form>
-    </div>
+</div>

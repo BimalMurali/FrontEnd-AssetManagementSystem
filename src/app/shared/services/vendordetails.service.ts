@@ -4,6 +4,7 @@ import { environment } from 'src/environments/environment';
 import { Vendors } from '../models/vendors';
 import { Observable } from 'rxjs';
 import { Assetdefinition } from '../models/assetdefinition';
+import { Assettype } from '../models/assettype';
 
 
 @Injectable({
@@ -12,7 +13,9 @@ import { Assetdefinition } from '../models/assetdefinition';
 export class VendordetailsService {
 
   // list of asset definitions
-  assetdefinition: Assetdefinition[];
+  //assetdefinition: Assetdefinition[];
+
+  assettype: Assettype[];
   //form
   formVendorData: Vendors = new Vendors();
 
@@ -29,6 +32,7 @@ export class VendordetailsService {
       .then(response => {
         console.log(response);
         this.vendors = response as Vendors[];
+        console.log(this.vendors);
       },
         error => {
           console.log(error);
@@ -39,7 +43,7 @@ export class VendordetailsService {
       .toPromise()
       .then(response => {
         console.log(response);
-        this.assetdefinition = response as Assetdefinition[];
+        this.assettype = response as Assettype[];
       },
         error => {
           console.log(error);

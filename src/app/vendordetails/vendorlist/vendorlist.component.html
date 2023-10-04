@@ -17,6 +17,7 @@
           <th>Asset Definition</th>
           <th>Asset Definition ID</th>
           <th>address</th>
+          <th>IsActive</th>
           
         </tr>
       </thead>
@@ -27,9 +28,10 @@
           <td>{{v.type}}</td>
           <td>{{v.validFrom| date:"dd-MMM-yyyy"}}</td>
           <td>{{v.validTo| date:"dd-MMM-yyyy"}}</td>
-          <td>{{v.assetName}}</td>
+          <td>{{v.assettypeid}}</td>
           <td>{{v.assettypeid}}</td>
           <td>{{v.address}}</td>
+          <td>{{v.active}}</td>
           <td><button type="button" class="btn btn-sm btn-outline-info"(click)="updateVendor(v)"><i class="fa fa-edit"></i></button>
           
 

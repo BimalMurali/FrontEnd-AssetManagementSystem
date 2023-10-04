@@ -20,7 +20,11 @@ export class VendoraddComponent implements OnInit {
   }
   // Insert
   addVendordetails(form:NgForm){
+    form.value.type="supplier";
     console.log("Inserting");
+    console.log(form.value);
+    console.log(form.value.isActive);
+    console.log(form.value.type);
     this.vendordetailsService.insertVendordetails(form.value).subscribe(
       (response )=>{
         console.log(response)
