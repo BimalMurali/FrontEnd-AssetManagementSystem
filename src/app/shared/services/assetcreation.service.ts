@@ -52,6 +52,10 @@ insertAssetCreation(assetcreation:Assetcreation):Observable<any>{
 }
 
 // update assset creation
+updateAssetCreation(assetcreation:Assetcreation):Observable<any>{
+  return this.httpClient.put(environment.apiUrl + '/api/assetcreation',assetcreation)
+}
+
 
 // get all vendors
 // http://localhost:9091/api/vendors

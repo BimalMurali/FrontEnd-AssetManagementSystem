@@ -4,13 +4,12 @@ import{Status} from "./status"
 export class Purchaseorder {
 
     
-    id: number=0;
-    purchaseOrderNo: number=0;
+    id: number;
     orderDate: Date
     deliveryDate: Date;
-    assetTypeId:number;
-    statusnames:string;
-    vendorid:number;
+    assetId:number;
+    statusId:number;
+    vendorId:number;
     
     assetdef: Assetdefinition = new Assetdefinition();
     vendors: Vendors = new Vendors();
