@@ -7,12 +7,13 @@ import { AddassetsComponent } from './addassets/addassets.component';
 import { UpdateassetsComponent } from './updateassets/updateassets.component';
 import { ListassetsComponent } from './listassets/listassets.component';
 import { FormsModule } from '@angular/forms';
+import { HomeComponent } from './home/home.component';
 import{ Ng2SearchPipeModule} from 'ng2-search-filter';
-import{NgxPaginationModule} from 'ngx-pagination'
+import{NgxPaginationModule} from 'ngx-pagination';
 
 
 @NgModule({
-  declarations: [AssetdefinitionComponent, AddassetsComponent, UpdateassetsComponent, ListassetsComponent],
+  declarations: [AssetdefinitionComponent, AddassetsComponent, UpdateassetsComponent, ListassetsComponent, HomeComponent],
   imports: [
     CommonModule,
     AssetdefinitionRoutingModule,

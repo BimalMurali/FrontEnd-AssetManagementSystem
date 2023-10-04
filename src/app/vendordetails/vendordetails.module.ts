@@ -7,10 +7,11 @@ import { VendorlistComponent } from './vendorlist/vendorlist.component';
 import { VendoreditComponent } from './vendoredit/vendoredit.component';
 import { VendoraddComponent } from './vendoradd/vendoradd.component';
 import { FormsModule } from '@angular/forms';
+import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
-  declarations: [VendordetailsComponent, VendorlistComponent, VendoreditComponent, VendoraddComponent],
+  declarations: [VendordetailsComponent, VendorlistComponent, VendoreditComponent, VendoraddComponent, HomeComponent],
   imports: [
     CommonModule,
     VendordetailsRoutingModule,

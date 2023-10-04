@@ -65,7 +65,7 @@ export class LoginComponent implements OnInit {
             sessionStorage.setItem("USER_NAME", response.data.Username);
             localStorage.setItem("ROLE", response.data.role);
             localStorage.setItem("JWT_UTIL", response.data.ACCESSTOKEN);
-            this.router.navigate(["/assetdefinition"]);
+            this.router.navigate(["/assetdefinition/home"]);
 
           }
 
@@ -75,7 +75,7 @@ export class LoginComponent implements OnInit {
             sessionStorage.setItem("USER_NAME", response.data.Username);
             localStorage.setItem("ROLE", response.data.role);
             localStorage.setItem("JWT_UTIL", response.data.ACCESSTOKEN);
-            this.router.navigate(["/vendordetails"]);
+            this.router.navigate(["/vendordetails/home"]);
           }
 
           else if (response.data.role === 3) {
@@ -84,7 +84,7 @@ export class LoginComponent implements OnInit {
             sessionStorage.setItem("USER_NAME", response.data.Username);
             localStorage.setItem("ROLE", response.data.role);
             localStorage.setItem("JWT_UTIL", response.data.ACCESSTOKEN);
-            this.router.navigate(["/purchaseorders"]);
+            this.router.navigate(["/purchaseorders/home"]);
           }
 
 
@@ -94,7 +94,7 @@ export class LoginComponent implements OnInit {
             sessionStorage.setItem("USER_NAME", response.data.Username);
             localStorage.setItem("ROLE", response.data.role);
             localStorage.setItem("JWT_UTIL", response.data.ACCESSTOKEN);
-            this.router.navigate(["/assetcreation"]);
+            this.router.navigate(["/assetcreation/home"]);
 
           }
 

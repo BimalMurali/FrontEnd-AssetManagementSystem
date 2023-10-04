@@ -3,10 +3,13 @@ import { Routes, RouterModule } from '@angular/router';
 import{ListassetsComponent } from './listassets/listassets.component'
 import{AddassetsComponent} from './addassets/addassets.component'
 import { UpdateassetsComponent } from './updateassets/updateassets.component';
+import {HomeComponent} from './home/home.component'
 const routes: Routes = [
   {path:'list',component:ListassetsComponent},
   {path:'add',component:AddassetsComponent},
   {path:'edit/:id',component:UpdateassetsComponent},
+  {path:'home',component:HomeComponent}
+
 ];
 
 @NgModule({
