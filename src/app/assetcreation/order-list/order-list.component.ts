@@ -41,6 +41,7 @@ export class OrderListComponent implements OnInit {
   //update
   editPurchaseOrder(purchaseorder:Purchaseorder){
     console.log(purchaseorder);
+    console.log("test")
     console.log(this.populatedOrdersData(purchaseorder));
     this.router.navigate(['assetcreation/orderedit',purchaseorder.id]);
 

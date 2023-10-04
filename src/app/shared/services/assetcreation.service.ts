@@ -83,10 +83,10 @@ getAllVendors(): void {
 // get all asset definitions
 // http://localhost:9091/api/assettype
 getAllAssetsDef(): void {
-  this.httpClient.get(environment.apiUrl + '/api/assets')
+  this.httpClient.get(environment.apiUrl + '/api/assettype')
   .toPromise()
   .then(response =>{
-    // console.log(response);
+    console.log(response);
     this.assetdefinition=response as Assetdefinition[];
   },
   error=>{

@@ -46,8 +46,10 @@ export class PurchaseordersService {
     this.httpClient.get(environment.apiUrl + '/api/purchaseorders')
       .toPromise()
       .then(response => {
+        console.log("hi")
         console.log(response);
         this.order = response as Purchaseorder[];
+
       },
         error => {
           console.log(error);
