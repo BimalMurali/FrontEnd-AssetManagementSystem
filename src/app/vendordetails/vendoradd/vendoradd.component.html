@@ -53,7 +53,7 @@
                 [(ngModel)]="vendordetailsService.formVendorData.assettypeid" class="form-control" required>
                 <option value=0 selected disabled>---Select Asset Type</option>
                 <option *ngFor="let dept of vendordetailsService.assettype" value="{{dept.id}}">
-                    {{dept.assetName}}
+                    {{dept.assetType}}
                 </option>
             </select>
         </div>
@@ -144,6 +144,7 @@
 
             <button type="submit" class="btn btn-lg btn-primary form-control"
                 [disabled]="!(form.valid && form.dirty)">INSERT</button>
+
 
         </div>
 

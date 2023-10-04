@@ -14,8 +14,8 @@
           <th>Type</th>
           <th>validFrom</th>
           <th>validTo</th>
-          <th>Asset Definition</th>
-          <th>Asset Definition ID</th>
+          <th>Asset Type</th>
+          <th>Asset Type ID</th>
           <th>address</th>
           <th>IsActive</th>
           
@@ -28,7 +28,7 @@
           <td>{{v.type}}</td>
           <td>{{v.validFrom| date:"dd-MMM-yyyy"}}</td>
           <td>{{v.validTo| date:"dd-MMM-yyyy"}}</td>
-          <td>{{v.assettypeid}}</td>
+          <td>{{v?.assetType.assetType }}</td>
           <td>{{v.assettypeid}}</td>
           <td>{{v.address}}</td>
           <td>{{v.active}}</td>
