@@ -6,7 +6,7 @@ import { UpdateassetsComponent } from './updateassets/updateassets.component';
 const routes: Routes = [
   {path:'list',component:ListassetsComponent},
   {path:'add',component:AddassetsComponent},
-  {path:'edit',component:UpdateassetsComponent},
+  {path:'edit/:id',component:UpdateassetsComponent},
 ];
 
 @NgModule({
