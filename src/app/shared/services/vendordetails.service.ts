@@ -5,6 +5,7 @@ import { Vendors } from '../models/vendors';
 import { Observable } from 'rxjs';
 import { Assetdefinition } from '../models/assetdefinition';
 import { Assettype } from '../models/assettype';
+import { Router } from '@angular/router';
 
 
 @Injectable({
@@ -24,7 +25,7 @@ export class VendordetailsService {
 
 
   //dependency injection --- Constructor
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient,private router:Router) { }
 
   getAllVendors(): void {
     this.httpClient.get(environment.apiUrl + '/api/vendors')
@@ -65,5 +66,15 @@ export class VendordetailsService {
     return this.httpClient.get(environment.apiUrl+'/api/vendors/'+id);
   }
 
+
+  public logOut() {
+    //clear all local and session storage keys
+    localStorage.removeItem("USER_NAME");
+    sessionStorage.removeItem("USER_NAME");
+    localStorage.removeItem("ROLE");
+    localStorage.removeItem("JWT_UTIL");
+  
+    this.router.navigate(['home'])
+  }
 }
 

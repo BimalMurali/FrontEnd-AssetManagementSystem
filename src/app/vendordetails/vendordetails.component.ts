@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { VendordetailsService } from '../shared/services/vendordetails.service';
 
 @Component({
   selector: 'app-vendordetails',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VendordetailsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private vendordetailservice:VendordetailsService) { }
 
   ngOnInit(): void {
   }
 
+  logOut(){
+    console.log("Log out");
+    this.vendordetailservice.logOut();
+  }
 }

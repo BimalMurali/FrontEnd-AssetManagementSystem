@@ -50,4 +50,19 @@ export class OrderListComponent implements OnInit {
   populatedOrdersData(purchaseorder:Purchaseorder){
     this.purchaseorderservice.formPurchaseOrderData=Object.assign({},purchaseorder)
   }
-}
+
+
+disableOrder(_id:number){
+  if(confirm("Do you want to delete this record?")){
+    this.purchaseorderservice.disableOrder(_id)
+    .subscribe(
+      (response)=>{
+        console.log(response);
+        this.purchaseorderservice.getAllOrder();
+      },
+      (error)=>{
+      console.log(error);
+    }
+    )
+  }
+}}

@@ -5,13 +5,14 @@ import { PurchaseorderseditComponent } from './purchaseordersedit/purchaseorders
 import { PurchaseordersdeleteComponent } from './purchaseordersdelete/purchaseordersdelete.component';
 import { PurchaseordersaddComponent } from './purchaseordersadd/purchaseordersadd.component';
 import {HomeComponent} from './home/home.component'
+import { AuthGuard } from '../auth/auth.guard';
 
 const routes: Routes = [
-  {path:'list',component:PurchaseorderslistComponent},
-  {path:'edit/:id',component:PurchaseorderseditComponent},
-  {path:'delete',component:PurchaseordersdeleteComponent},
-  {path:'add',component:PurchaseordersaddComponent},
-  {path:'home',component:HomeComponent}
+  {path:'list',component:PurchaseorderslistComponent,canActivate:[AuthGuard],data:{role:'3'}},
+  {path:'edit/:id',component:PurchaseorderseditComponent,canActivate:[AuthGuard],data:{role:'3'}},
+  {path:'delete',component:PurchaseordersdeleteComponent,canActivate:[AuthGuard],data:{role:'3'}},
+  {path:'add',component:PurchaseordersaddComponent,canActivate:[AuthGuard],data:{role:'3'}},
+  {path:'home',component:HomeComponent,canActivate:[AuthGuard],data:{role:'3'}}
 ];
 
 @NgModule({

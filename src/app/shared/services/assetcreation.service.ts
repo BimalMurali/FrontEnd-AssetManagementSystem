@@ -6,6 +6,7 @@ import { Observable } from 'rxjs';
 import { Vendors } from '../models/vendors';
 import { Assetdefinition } from '../models/assetdefinition';
 import { Purchaseorder } from '../models/purchaseorder';
+import { Router } from '@angular/router';
 
 
 @Injectable({
@@ -29,7 +30,7 @@ export class AssetcreationService {
 
 
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient,private router:Router) { }
 
   //1 Get all vendors - promises 
 //http://localhost:9091/api/assetcreation  
@@ -97,10 +98,20 @@ getAllAssetsDef(): void {
 // updatePurchaseOrders(purchaseorder:Purchaseorder):Observable<any>{
 //   return this.httpClient.put(environment.apiUrl+'/api/purchaseorders',purchaseorder);
 // }
+public logOut() {
+  //clear all local and session storage keys
+  localStorage.removeItem("USER_NAME");
+  sessionStorage.removeItem("USER_NAME");
+  localStorage.removeItem("ROLE");
+  localStorage.removeItem("JWT_UTIL");
+  this.router.navigate(['home'])
+}
 
 disableOrder(id:number){
   return this.httpClient.get(environment.apiUrl+'/api/deleteasset/'+id);
+  
+
+
+
 }
-
-
 }

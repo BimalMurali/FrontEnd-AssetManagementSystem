@@ -6,16 +6,15 @@ import { SharedComponent } from './shared/shared.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-import { HomeComponent } from './shared/home/home.component';
-// import { HomevendorComponent } from './vendor/homevendor/homevendor.component';
+import {ToastrModule} from 'ngx-toastr';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { AuthGuard } from './auth/auth.guard';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
     SharedComponent
-    
   ],
   imports: [
     BrowserModule,
@@ -23,6 +22,8 @@ import { HomeComponent } from './shared/home/home.component';
     FormsModule,
     ReactiveFormsModule,
     RouterModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(),
     AppRoutingModule
    
   ],
