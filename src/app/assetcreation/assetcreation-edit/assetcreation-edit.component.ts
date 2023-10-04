@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AssetcreationService } from 'src/app/shared/services/assetcreation.service';
 
 @Component({
   selector: 'app-assetcreation-edit',
@@ -7,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AssetcreationEditComponent implements OnInit {
 
-  constructor() { }
+  constructor(public assetcreationservice: AssetcreationService,private router:Router) { }
 
   ngOnInit(): void {
   }

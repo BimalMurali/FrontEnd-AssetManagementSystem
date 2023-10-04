@@ -32,7 +32,9 @@ export class AssetcreationAddComponent implements OnInit {
 
   // submit form
   onSubmit(form : NgForm){
+    console.log("hii")
     console.log(form.value)
+    console.log("hello")
     // insert
     this.addAssetCreation(form)
 

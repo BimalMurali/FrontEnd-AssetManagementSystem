@@ -33,7 +33,7 @@ getAllAssetDefinitions(): void {
   this.httpClient.get(environment.apiUrl + '/api/assetcreation')
   .toPromise()
   .then(response =>{
-    console.log(response);
+    // console.log(response);
     this.assetdefinitions=response as Assetcreation[];
   },
   error=>{
@@ -51,13 +51,15 @@ insertAssetCreation(assetcreation:Assetcreation):Observable<any>{
   return this.httpClient.post(environment.apiUrl + '/api/assetcreation',assetcreation)
 }
 
+// update assset creation
+
 // get all vendors
 // http://localhost:9091/api/vendors
 getAllVendors(): void {
   this.httpClient.get(environment.apiUrl + '/api/vendors')
   .toPromise()
   .then(response =>{
-    console.log(response);
+    // console.log(response);
     this.vendors=response as Vendors[];
   },
   error=>{
@@ -71,7 +73,7 @@ getAllAssetsDef(): void {
   this.httpClient.get(environment.apiUrl + '/api/assettype')
   .toPromise()
   .then(response =>{
-    console.log(response);
+    // console.log(response);
     this.assetdefinition=response as Assetdefinition[];
   },
   error=>{
