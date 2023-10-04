@@ -7,13 +7,15 @@ import { PurchaseorderslistComponent } from './purchaseorderslist/purchaseorders
 import { PurchaseordersaddComponent } from './purchaseordersadd/purchaseordersadd.component';
 import { PurchaseorderseditComponent } from './purchaseordersedit/purchaseordersedit.component';
 import { PurchaseordersdeleteComponent } from './purchaseordersdelete/purchaseordersdelete.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
   declarations: [PurchaseordersComponent, PurchaseorderslistComponent, PurchaseordersaddComponent, PurchaseorderseditComponent, PurchaseordersdeleteComponent],
   imports: [
     CommonModule,
-    PurchaseordersRoutingModule
+    PurchaseordersRoutingModule,
+    FormsModule
   ]
 })
 export class PurchaseordersModule { }

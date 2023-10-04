@@ -5,17 +5,21 @@
     <form name="frmAssetCreation" #form="ngForm" autocomplete="off" (ngSubmit)="onSubmit(form)">
 
 
+
+        <div class="form-group">
+            <input type="hidden" readonly name="id" [(ngModel)]="assetcreationservice.formAssetCreationData.id">
+        </div>
         
         <!-- assetCraetionId -->
-        <div class="form-group">
+        <!-- <div class="form-group">
             <label for="">Asset Creation id</label>
             <input type="text" name="id" #id="ngModel"
                 [(ngModel)]="assetcreationservice.formAssetCreationData.id" class="form-control"
                 placeholder="Enter Creation id" min="3" maxlength="25" required
                 [ngClass]="{'is-invalid':id.touched && id.invalid}">
 
-            <!-- Validation error message -->
-            <div class="validation-error" *ngIf="id.touched && id.invalid">
+             Validation error message -->
+            <!-- <div class="validation-error" *ngIf="id.touched && id.invalid">
                 <div *ngIf="id.errors.required">
                     assetCreationId is invalid or required
 
@@ -23,7 +27,7 @@
 
             </div>
 
-        </div>
+        </div> --> 
 
         <!-- make -->
 
@@ -60,15 +64,15 @@
 
         <div class="form-group">
             <label for="">Asset Definiton Id</label>
-            <input type="text" name="modelId" #modelId="ngModel"
+            <input type="text" readonly name="modelId" #modelId="ngModel"
                 [(ngModel)]="assetcreationservice.formAssetCreationData.modelId" class="form-control"
-                placeholder="Enter modelId" min="3" maxlength="25" required
+                placeholder="Asset Id" min="3" maxlength="25" required
                 [ngClass]="{'is-invalid':modelId.touched && modelId.invalid}">
 
             <!-- Validation error message -->
             <div class="validation-error" *ngIf="modelId.touched && modelId.invalid">
                 <div *ngIf="modelId.errors.required">
-                    modelId is invalid or required
+                    Asset ID is invalid or required
 
                 </div>
 
@@ -119,14 +123,14 @@
         <div class="form-group">
             <label for="">Year of Manufacture</label>
             <input type="text" name="yearOfManufacture" #yearOfManufacture="ngModel"
-                [(ngModel)]="assetcreationservice.formAssetCreationData.serialNo" class="form-control"
+                [(ngModel)]="assetcreationservice.formAssetCreationData.yearOfManufacture" class="form-control"
                 placeholder="Enter yearOfManufacture" min="3" maxlength="25" required
                 [ngClass]="{'is-invalid':yearOfManufacture.touched && yearOfManufacture.invalid}">
 
             <!-- Validation error message -->
             <div class="validation-error" *ngIf="yearOfManufacture.touched && serialNo.invalid">
                 <div *ngIf="yearOfManufacture.errors.required">
-                    serialNo is invalid or required
+                    yearOfManufacture is invalid or required
 
                 </div>
 
@@ -166,7 +170,7 @@
             <!-- Validation error message -->
             <div class="validation-error" *ngIf="warrranty.touched && warrranty.invalid">
                 <div *ngIf="warrranty.errors.required">
-                    serialNo is invalid or required
+                    warranty is invalid or required
 
                 </div>
 
@@ -233,9 +237,9 @@
 
         <div class="form-group">
             <label for="">vendorAssetTypeID</label>
-            <input type="text" name="vendorAssetTypeID" #vendorAssetTypeID="ngModel"
+            <input type="text" readonly name="vendorAssetTypeID" #vendorAssetTypeID="ngModel"
                 [(ngModel)]="assetcreationservice.formAssetCreationData.vendorAssetTypeID" class="form-control"
-                placeholder="Enter vendorAssetTypeID" min="3" maxlength="25" required
+                placeholder="vendorAssetTypeID" min="3" maxlength="25" required
                 [ngClass]="{'is-invalid':vendorAssetTypeID.touched && vendorAssetTypeID.invalid}">
 
             <!-- Validation error message -->

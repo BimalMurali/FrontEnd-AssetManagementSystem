@@ -10,6 +10,8 @@
             <th >Warranty</th> 
             <th >From Date</th> 
             <th >To Date</th> 
+            <th >AssestDefinitionId</th> 
+            <th >VendorId</th> 
           </tr>
         </thead>
         <tbody>
@@ -22,6 +24,8 @@
             <td>{{v.warrranty}}</td>
             <td>{{v.fromDate | date:"dd-MMM-yyyy"}}</td>
             <td>{{v.toDate | date:"dd-MMM-yyyy"}}</td>
+            <td>{{v.modelId}}</td>
+            <td>{{v.vendorAssetTypeID}}</td>
           </tr>
         </tbody>
       </table>
