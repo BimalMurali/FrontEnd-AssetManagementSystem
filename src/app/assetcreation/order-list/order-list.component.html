@@ -1,0 +1,30 @@
+<div class="conatiner">
+    <table class="table table-striped table-bordered">
+        <thead>
+          <tr>
+            <th>Purchase Order ID</th>
+            <th>Order Date</th>
+            <th>Delivery Date</th> 
+            <th>Asset Type Name</th>
+            <th>Vendor Name </th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let p of purchaseorderservice.order">
+            <td>{{p.id}}</td>
+            <td>{{p.orderDate|date:'dd-MM-yyyy'}}</td>
+            <td>{{p.deliveryDate|date:'dd-MM-yyyy'}}</td>
+            <td>{{getVendorNameById(p.vendorId)}}</td>
+            <td>{{p.assetId}}</td>
+            <td>{{p.statusId}}</td>
+            <td><button type="button" class="btn btn-sm btn-outline-info"
+              (click)="editPurchaseOrder(p)">
+              <i class="fa fa-edit"></i></button>&nbsp;
+          </td> 
+          </tr>
+        </tbody>
+      </table>
+      
+</div>  
+<router-outlet></router-outlet>

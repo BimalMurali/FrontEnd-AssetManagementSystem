@@ -10,12 +10,14 @@ import { AssetcreationDeleteComponent } from './assetcreation-delete/assetcreati
 import { FormsModule } from '@angular/forms';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import {NgxPaginationModule} from 'ngx-pagination';
+import { OrderListComponent } from './order-list/order-list.component';
+import { OrderEditComponent } from './order-edit/order-edit.component';
 
 
 
 
 @NgModule({
-  declarations: [AssetcreationComponent, AssetcreationListComponent, AssetcreationEditComponent, AssetcreationAddComponent, AssetcreationDeleteComponent],
+  declarations: [AssetcreationComponent, AssetcreationListComponent, AssetcreationEditComponent, AssetcreationAddComponent, AssetcreationDeleteComponent, OrderListComponent, OrderEditComponent],
   imports: [
     CommonModule,
     AssetcreationRoutingModule,

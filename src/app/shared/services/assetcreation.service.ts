@@ -61,9 +61,9 @@ updateAssetCreation(assetcreation:Assetcreation):Observable<any>{
 }
 
 // update order status and delivery date
-updateStatus(order:Purchaseorder):Observable<any>{
-  return this.httpClient.put(environment.apiUrl + '/api/purchaseorders',order)
-}
+// updateStatus(order:Purchaseorder):Observable<any>{
+//   return this.httpClient.put(environment.apiUrl + '/api/purchaseorders',order)
+// }
 
 
 // get all vendors
@@ -93,6 +93,10 @@ getAllAssetsDef(): void {
     console.log(error);
   });
 }
+
+// updatePurchaseOrders(purchaseorder:Purchaseorder):Observable<any>{
+//   return this.httpClient.put(environment.apiUrl+'/api/purchaseorders',purchaseorder);
+// }
 
 
 
