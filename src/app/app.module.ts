@@ -14,9 +14,8 @@ import { HomeComponent } from './shared/home/home.component';
   declarations: [
     AppComponent,
     HomeComponent,
-    SharedComponent,
-    //HomevendorComponent,
-
+    SharedComponent
+    
   ],
   imports: [
     BrowserModule,

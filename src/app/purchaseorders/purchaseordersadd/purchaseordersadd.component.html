@@ -28,7 +28,7 @@
         <!-- dropdown list for asset types -->
         <div class="form-group">
             <label for="">Asset Types</label>
-            <select name="assetTypeId" id="assetTypeId" #assetTypeId="ngModel"
+            <select name="assetId" id="assetId" #assetTypeId="ngModel"
                 [(ngModel)]="purchaseorderservice.formPurchaseOrderData.assetTypeId" class="form-control" required>
                 <option value=0 selected disabled>---Select Asset Type</option>
                 <option *ngFor="let dept of purchaseorderservice.assetdefinition" value="{{dept.id}}">

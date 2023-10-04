@@ -5,13 +5,16 @@ import { VendordetailsRoutingModule } from './vendordetails-routing.module';
 import { VendordetailsComponent } from './vendordetails.component';
 import { VendorlistComponent } from './vendorlist/vendorlist.component';
 import { VendoreditComponent } from './vendoredit/vendoredit.component';
+import { VendoraddComponent } from './vendoradd/vendoradd.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
-  declarations: [VendordetailsComponent, VendorlistComponent, VendoreditComponent],
+  declarations: [VendordetailsComponent, VendorlistComponent, VendoreditComponent, VendoraddComponent],
   imports: [
     CommonModule,
-    VendordetailsRoutingModule
+    VendordetailsRoutingModule,
+    FormsModule
   ]
 })
 export class VendordetailsModule { }
