@@ -20,7 +20,9 @@ export class AuthGuard implements CanActivate {
   
       //check condition
       if (currentRole !== expectedRole) {
-        this.toastr.error("UNAUTHORIZED ACCESS");
+        this.toastr.error("<div class='error-message'>Unauthorized Access!!!</div>", "", {
+          enableHtml: true,
+        });
         localStorage.removeItem("USER_NAME");
         sessionStorage.removeItem("USER_NAME");
         localStorage.removeItem("ROLE");
