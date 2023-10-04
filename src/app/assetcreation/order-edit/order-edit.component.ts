@@ -27,7 +27,6 @@ export class OrderEditComponent implements OnInit {
         console.log(error)
       }
     )
-    
   }
   // submit form
   onSubmit(form : NgForm){
