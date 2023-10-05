@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AssetDefinitionService } from 'src/app/shared/services/asset-definition.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-addassets',
@@ -12,6 +13,8 @@ export class AddassetsComponent implements OnInit {
 
   constructor(public assetService: AssetDefinitionService,
     private router:Router) { }
+
+    private assetDefinitionDataSubscription: Subscription;
 
   ngOnInit(): void {
   this.assetService.getAllAssets();
@@ -43,6 +46,7 @@ export class AddassetsComponent implements OnInit {
     //reset
     form.reset();
     this.router.navigateByUrl("/assetdefinition/list")
+    this.assetDefinitionDataSubscription.unsubscribe();
 
 }
 }

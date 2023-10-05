@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Assetdefinition } from 'src/app/shared/models/assetdefinition';
 import { AssetDefinitionService } from 'src/app/shared/services/asset-definition.service';
-
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-listassets',
@@ -18,6 +18,8 @@ export class ListassetsComponent implements OnInit {
   constructor(public assetService: AssetDefinitionService,
     private router:Router) { }
 
+    private assetDefinitionDataSubscription: Subscription;
+
   ngOnInit(): void {
     this.assetService.getAllAssets();
   }
@@ -31,6 +33,7 @@ export class ListassetsComponent implements OnInit {
     console.log(this.populatedEmployeeData(assetdefinition))
     this.router.navigate(['assetdefinition/edit',assetdefinition.id])
     // Localhost:4200/employees/id
+    this.assetDefinitionDataSubscription.unsubscribe();
 
   }
 
