@@ -60,6 +60,7 @@ export class LoginComponent implements OnInit {
           }
 
           else if (response.data.role === 1) {
+            console.log("1 Logged in");
             this.error = ' ';
             localStorage.setItem("USER_NAME", response.data.Username);
             sessionStorage.setItem("USER_NAME", response.data.Username);
@@ -70,6 +71,7 @@ export class LoginComponent implements OnInit {
           }
 
           else if (response.data.role === 2) {
+            console.log("2 Logged in");
             this.error = ' ';
             localStorage.setItem("USER_NAME", response.data.Username);
             sessionStorage.setItem("USER_NAME", response.data.Username);
@@ -79,6 +81,7 @@ export class LoginComponent implements OnInit {
           }
 
           else if (response.data.role === 3) {
+            console.log("3 Logged in");
             this.error = ' ';
             localStorage.setItem("USER_NAME", response.data.Username);
             sessionStorage.setItem("USER_NAME", response.data.Username);
@@ -89,6 +92,7 @@ export class LoginComponent implements OnInit {
 
 
           else if (response.data.role === 4) {
+            console.log("4 Logged in");
             this.error = ' ';
             localStorage.setItem("USER_NAME", response.data.Username);
             sessionStorage.setItem("USER_NAME", response.data.Username);
@@ -100,7 +104,7 @@ export class LoginComponent implements OnInit {
 
 
         }
-        
+
         )
     }
   }

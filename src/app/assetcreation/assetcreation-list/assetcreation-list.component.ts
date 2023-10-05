@@ -45,6 +45,7 @@ export class AssetcreationListComponent implements OnInit {
         },
         (error)=>{
         console.log(error);
+        // this.router.navigate(["/assetcreation/list"]);
       }
       )
     

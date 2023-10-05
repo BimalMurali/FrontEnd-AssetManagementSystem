@@ -4,6 +4,7 @@ import { Assettype } from '../models/assettype';
 import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
 import { Assetdefinition } from '../models/assetdefinition';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -23,7 +24,7 @@ export class AssetDefinitionService {
   //list of asset types
   assetTypes:Assettype[];
 
-  constructor(private httpClient: HttpClient) { } // DI -CI
+  constructor(private httpClient: HttpClient,private router:Router) { } // DI -CI
   //http://localhost:9091/api/employees
   //1 Get all Employees - promises
   getAllAssets(): void{
@@ -74,5 +75,15 @@ updateAssetDefinition  (assetdefinition:Assetdefinition):Observable<any>{
 
 disableAsset(id:number){
   return this.httpClient.get(environment.apiUrl+'/api/asset/'+id);
+}
+
+public logOut() {
+  //clear all local and session storage keys
+  localStorage.removeItem("USER_NAME");
+  sessionStorage.removeItem("USER_NAME");
+  localStorage.removeItem("ROLE");
+  localStorage.removeItem("JWT_UTIL");
+
+  this.router.navigate(['home'])
 }
 }

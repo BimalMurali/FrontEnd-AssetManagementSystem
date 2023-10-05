@@ -9,8 +9,8 @@
     </div>
   </div>
   <br>
-    <table class="table table-striped table-bordered">
-        <thead>
+    <table class="table">
+        <thead class="thead-dark">
           <tr>
             <th>Purchase Order ID</th>
             <th>Order Date</th>
@@ -18,6 +18,8 @@
             <th>Asset Type Name</th>
             <th>Vendor Name </th>
             <th>Status</th>
+            <th>Is Active</th>
+            <th>Edit</th>
           </tr>
         </thead>
         <tbody>
@@ -29,9 +31,12 @@
             <td>{{getVendorNameById(p.vendorId)}}</td>
             <!-- <td>{{p.status.statusNames}}</td> -->
             <td>{{getStatusNameById(p.statusId)}}</td>
+            <td>{{p.active}}</td>
             <td><button type="button" class="btn btn-sm btn-outline-info"
               (click)="editPurchaseOrder(p)">
               <i class="fa fa-edit"></i></button>&nbsp;
+              <button type="button" class="btn  btn-sm btn-danger" (click)="disableOrder(p.id)"><i
+                class="fa fa-trash"></i></button>
           </td> 
           </tr>
         </tbody>
